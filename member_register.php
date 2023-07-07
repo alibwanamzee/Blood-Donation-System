@@ -7,7 +7,7 @@
 	$password = $_POST['password'];
 	$email = $_POST['email'];
 
-	$insert = $connection->query("INSERT INTO member(name, username, password, email, usertype) VALUES('$fullname', '$username', '$password', '$password', 'user')");
+	$insert = $connection->query("INSERT INTO users(name, username, password, email, usertype) VALUES('$fullname', '$username', '$password', '$password', 'user')");
 	if($insert){
 		$_SESSION['success'] = '';
 		header('location:index.php');

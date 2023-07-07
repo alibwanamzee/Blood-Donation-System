@@ -14,7 +14,7 @@ error_reporting(E_ALL);
 
 	
 
-	$update = $connection->query("UPDATE member SET name='$name', username='$uname', password='$password', email='$email', phone='$phone' WHERE member_id='$id'");
+	$update = $connection->query("UPDATE users SET name='$name', username='$uname', password='$password', email='$email', phone='$phone' WHERE member_id='$id'");
 	
 	header('location:home.php');
 ?>

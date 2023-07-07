@@ -1,3 +1,3 @@
 <?php
-	$connection = new mysqli('localhost', 'root', '', 'blood_bank');
+	$connection = new mysqli('localhost', 'root', '', 'Blood_donation_database');
 ?>
