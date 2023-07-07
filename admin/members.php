@@ -28,7 +28,7 @@
 										</thead>
 										<tbody>
 										<?php
-										$select = $connection->query("SELECT * FROM member");
+										$select = $connection->query("SELECT * FROM users");
 										while($row = $select->fetch_array()){ ?>
 										<tr>
 													<td><?php echo $row['name'];?></td>

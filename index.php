@@ -27,11 +27,11 @@
 	<!-- WRAPPER -->
 	<div id="wrapper">
 		<div class="vertical-align-wrap">
-		<?php
-						if(isset($_SESSION['success'])){
-							echo "";
-						}
-					?>
+			<?php
+				if(isset($_SESSION['success'])){
+					echo "Success";
+				}
+			?>
 			<div class="vertical-align-middle">
 				<div class="auth-box ">
 					<div class="left">
@@ -41,6 +41,7 @@
 								<div class="logo text-center"><img src="assets/img/logo-dark.png" alt="Klorofil Logo"></div>
 								<p class="lead">Login to your account</p>
 							</div>
+							
 							<form class="form-auth-small" action="login.php" method="post">
 								<div class="form-group">
 									<label for="signin-email" class="control-label sr-only">Email</label>

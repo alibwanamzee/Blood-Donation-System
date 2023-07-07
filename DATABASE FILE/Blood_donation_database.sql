@@ -1,6 +1,6 @@
 /*
 SQLyog Community v12.4.3 (64 bit)
-MySQL - 5.6.17 : Database - blood_bank
+MySQL - 5.6.17 : Database - Blood_donation_database
 *********************************************************************
 */
 
@@ -12,9 +12,9 @@ MySQL - 5.6.17 : Database - blood_bank
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`blood_bank` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`Blood_donation_database` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `blood_bank`;
+USE `Blood_donation_database`;
 
 /*Table structure for table `blood_contact` */
 
@@ -123,7 +123,7 @@ CREATE TABLE `contact` (
   `member_fk` int(100) DEFAULT NULL,
   PRIMARY KEY (`contact_id`),
   KEY `member_fk` (`member_fk`),
-  CONSTRAINT `contact_ibfk_1` FOREIGN KEY (`member_fk`) REFERENCES `member` (`member_id`) ON UPDATE CASCADE
+  CONSTRAINT `contact_ibfk_1` FOREIGN KEY (`member_fk`) REFERENCES `users` (`member_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `contact` */
@@ -150,7 +150,7 @@ CREATE TABLE `donor` (
   `username_fk` varchar(100) NOT NULL,
   `status` int(12) DEFAULT NULL,
   PRIMARY KEY (`donor_id`,`username_fk`),
-  KEY `member` (`username_fk`)
+  KEY `users` (`username_fk`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 /*Data for the table `donor` */
@@ -171,16 +171,16 @@ CREATE TABLE `email_subs` (
   `member_fk` int(100) DEFAULT NULL,
   PRIMARY KEY (`subscribe_id`),
   KEY `member_fk` (`member_fk`),
-  CONSTRAINT `email_subs_ibfk_1` FOREIGN KEY (`member_fk`) REFERENCES `member` (`member_id`) ON UPDATE CASCADE
+  CONSTRAINT `email_subs_ibfk_1` FOREIGN KEY (`member_fk`) REFERENCES `users` (`member_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `email_subs` */
 
-/*Table structure for table `member` */
+/*Table structure for table `users` */
 
-DROP TABLE IF EXISTS `member`;
+DROP TABLE IF EXISTS `users`;
 
-CREATE TABLE `member` (
+CREATE TABLE `users` (
   `member_id` int(100) NOT NULL AUTO_INCREMENT,
   `name` varchar(190) DEFAULT NULL,
   `username` varchar(100) NOT NULL,
@@ -193,12 +193,12 @@ CREATE TABLE `member` (
   PRIMARY KEY (`member_id`,`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
-/*Data for the table `member` */
+/*Data for the table `users` */
 
-insert  into `member`(`member_id`,`name`,`username`,`password`,`email`,`phone`,`address`,`usertype`,`profile`) values 
-(1,'admin','super admin','admin',NULL,NULL,NULL,'admin','upload/3_1521639658.jpg'),
-(2,'cpp','codeprojects','123456',NULL,NULL,NULL,'user','upload/7015951-3d-funny-animal_1521603987.jpg'),
-(14,'today','today','today','today',NULL,NULL,'user','upload/vehicle_1521645370.png');
+insert  into `users`(`member_id`,`name`,`username`,`password`,`email`,`phone`,`address`,`usertype`,`profile`) values 
+(1,'Admin','super admin','admin',NULL,NULL,NULL,'super admin','upload/3_1521639658.jpg'),
+(2,'Doctor','hospital admin','admin',NULL,NULL,NULL,'hospital admin','upload/7015951-3d-funny-animal_1521603987.jpg'),
+(14,'Donor','donor','donor',NULL,NULL,NULL,'donor','upload/vehicle_1521645370.png');
 
 /*Table structure for table `requester` */
 

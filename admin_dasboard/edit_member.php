@@ -27,6 +27,6 @@
 		}
 	}
 
-	$update = $connection->query("UPDATE member SET name = '$name', usertype='$type', profile='$location' WHERE member_id='$id'");
+	$update = $connection->query("UPDATE users SET name = '$name', usertype='$type', profile='$location' WHERE member_id='$id'");
 	header('location:members.php');
 ?>

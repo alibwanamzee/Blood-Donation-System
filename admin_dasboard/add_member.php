@@ -34,7 +34,7 @@
 	if(!$_SERVER['REQUEST_METHOD'] == 'POST'){
 		$_SESSION['state_error'] = '';
 	}else {
-		$insert = $connection->query("INSERT INTO member(name, username, password, email, phone, address, usertype, profile) VALUES('$name', '$username', '$password', '$email', '$phone', '$address', 'user', '$location')");
+		$insert = $connection->query("INSERT INTO users(name, username, password, email, phone, address, usertype, profile) VALUES('$name', '$username', '$password', '$email', '$phone', '$address', 'user', '$location')");
 		$_SESSION['state_success'] = '';
 		header('location:members.php');
 	}

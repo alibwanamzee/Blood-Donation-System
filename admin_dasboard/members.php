@@ -31,7 +31,7 @@
     </thead>
     <tbody>
       <?php
-      $members= $connection->query("SELECT * FROM member");
+      $members= $connection->query("SELECT * FROM users");
       while($row = $members->fetch_array()) {
        ?>
 
@@ -68,7 +68,7 @@
       </div>
     </div>
   </div>
-  <!-- end of delete state modal
+  <!-- end of delete state modal-->
 
   <!-- edit member modal -->
   <div class="modal fade" id="editmember<?php echo $row['member_id'];?>" role="dialog">

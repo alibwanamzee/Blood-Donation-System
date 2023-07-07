@@ -55,7 +55,7 @@
 						
 						<li class="dropdown">
 						<?php
-						$image = $connection->query("SELECT * FROM member WHERE username='".$_SESSION['membername']."'");
+						$image = $connection->query("SELECT * FROM users WHERE username='".$_SESSION['membername']."'");
 						$row = $image->fetch_array(); ?>
 						
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="../<?php echo $row['profile'];?>" class="img-circle" alt="Avatar"> <?php ?> <span><?php echo $_SESSION['membername'];?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
