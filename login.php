@@ -25,6 +25,7 @@
 			header('location:user_dashboard/user_dashboard.php');
 		} 
 	}else {
-		$_SESSION['error'] = 'An Error Has Occurred';
+		$_SESSION['error'] = '';
+		header('location:index.php');	
 	}
 ?>
