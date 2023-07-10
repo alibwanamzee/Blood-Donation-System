@@ -72,12 +72,9 @@ DROP TABLE IF EXISTS `blood_request_group`;
 
 CREATE TABLE `blood_request_group` (
   `blood_request_group_id` int(100) NOT NULL AUTO_INCREMENT,
-  `requester_fk` int(100) DEFAULT NULL,
   `blood_fk` int(100) DEFAULT NULL,
   PRIMARY KEY (`blood_request_group_id`),
-  KEY `requester_fk` (`requester_fk`),
   KEY `blood_fk` (`blood_fk`),
-  CONSTRAINT `blood_request_group_ibfk_1` FOREIGN KEY (`requester_fk`) REFERENCES `requester` (`requester_id`) ON UPDATE CASCADE,
   CONSTRAINT `blood_request_group_ibfk_2` FOREIGN KEY (`blood_fk`) REFERENCES `blood_group` (`blood_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -93,23 +90,19 @@ CREATE TABLE `city` (
   `city_name` varchar(100) DEFAULT NULL,
   `description` varchar(120) DEFAULT NULL,
   `donor_fk` int(100) DEFAULT NULL,
-  `requester_fk` int(100) DEFAULT NULL,
   `state_fk` int(100) DEFAULT NULL,
   PRIMARY KEY (`city_id`),
   KEY `donor_fk` (`donor_fk`),
-  KEY `requester_fk` (`requester_fk`),
   KEY `state_fk` (`state_fk`),
   CONSTRAINT `city_ibfk_1` FOREIGN KEY (`donor_fk`) REFERENCES `donor` (`donor_id`) ON UPDATE CASCADE,
-  CONSTRAINT `city_ibfk_2` FOREIGN KEY (`requester_fk`) REFERENCES `requester` (`requester_id`) ON UPDATE CASCADE,
   CONSTRAINT `city_ibfk_3` FOREIGN KEY (`state_fk`) REFERENCES `state` (`state_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 /*Data for the table `city` */
 
-insert  into `city`(`city_id`,`city_code`,`city_name`,`description`,`donor_fk`,`requester_fk`,`state_fk`) values 
-(1,'Msa','Mombasa','City',NULL,NULL,1);
-(2,'Nrb','Nairobi','City',NULL,NULL,2);
-(001,'Msa','Mombasa','City',NULL,NULL,001);
+insert  into `city`(`city_id`,`city_code`,`city_name`,`description`,`donor_fk`,`state_fk`) values 
+(1,'Msa','Mombasa','City',NULL,1),
+(2,'Nrb','Nairobi','City',NULL,2);
 
 /*Table structure for table `contact` */
 
@@ -137,18 +130,11 @@ DROP TABLE IF EXISTS `donor`;
 CREATE TABLE `donor` (
   `donor_id` int(100) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
-  `father_name` varchar(100) DEFAULT NULL,
   `gender` varchar(100) DEFAULT NULL,
-  `dob` varchar(100) DEFAULT NULL,
-  `body_weight` varchar(100) DEFAULT NULL,
+  `phone` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `blood_group` varchar(40) DEFAULT NULL,
   `state` varchar(100) DEFAULT NULL,
   `city` varchar(100) DEFAULT NULL,
-  `address` varchar(200) DEFAULT NULL,
-  `pincode` varchar(100) DEFAULT NULL,
-  `phone` varchar(100) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
   `username_fk` varchar(100) NOT NULL,
   `status` int(12) DEFAULT NULL,
   PRIMARY KEY (`donor_id`,`username_fk`),
@@ -158,7 +144,7 @@ CREATE TABLE `donor` (
 /*Data for the table `donor` */
 
 insert  into `donor`(`donor_id`,`name`,`gender`,`phone`,`email`,`state`,`city`,`username_fk`,`status`) values 
-(1,'Donor 1','male',`070000000000`,'donor@gmail.com','Coast','Mombasa','Donor 1',1),
+(1,'Donor 1','male','0700000000','donor@gmail.com','Coast','Mombasa','donor',1);
 
 /*Table structure for table `email_subs` */
 
@@ -221,3 +207,4 @@ insert  into `state`(`state_id`,`state_code`,`state_name`,`description`) values
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
