@@ -11,7 +11,7 @@
 <html lang="en">
 
 <head>
-	<title>Welcome To Admin Dashboard</title>
+	<title>Welcome To Donor Dashboard</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -77,11 +77,6 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="user_dashboard.php" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						<li><a href="request.php" class=""><i class="lnr lnr-code"></i> <span>Request</span></a></li>
-						<li><a href="donor.php" class=""><i class="lnr lnr-chart-bars"></i> <span>Donate</span></a></li>
-						
-						
-						
 					</ul>
 				</nav>
 			</div>
