@@ -5,7 +5,7 @@
 	$username =$_POST['username'];
 	$password = $_POST['password'];
 
-	$login = $connection->query("SELECT * FROM users WHERE username='$username' AND password = '$password' AND usertype='hospital giadmin'");
+	$login = $connection->query("SELECT * FROM users WHERE username='$username' AND password = '$password' AND usertype='hospital admin' ");
 	$fetch = $login->fetch_array();
 	$row = $login->num_rows;
 	if($row == 1) {
