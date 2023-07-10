@@ -107,7 +107,9 @@ CREATE TABLE `city` (
 /*Data for the table `city` */
 
 insert  into `city`(`city_id`,`city_code`,`city_name`,`description`,`donor_fk`,`requester_fk`,`state_fk`) values 
-(3,'CLSs','Thihariyass','Thiahriya town shop',NULL,NULL,36);
+(1,'Msa','Mombasa','City',NULL,NULL,1);
+(2,'Nrb','Nairobi','City',NULL,NULL,2);
+(001,'Msa','Mombasa','City',NULL,NULL,001);
 
 /*Table structure for table `contact` */
 
@@ -155,11 +157,8 @@ CREATE TABLE `donor` (
 
 /*Data for the table `donor` */
 
-insert  into `donor`(`donor_id`,`name`,`father_name`,`gender`,`dob`,`body_weight`,`email`,`blood_group`,`state`,`city`,`address`,`pincode`,`phone`,`image`,`username_fk`,`status`) values 
-(11,'Shar','Ahammed','male','03/08/2018','34Kg','admin@gmail.com','O+','Kandyd','Thihariyass','34#','0778650336','Kandy','upload/11_1521639011.jpg','codeprojects',1),
-(13,'nizam','nizam','male','03/26/2018','34Kg','codeprojects@gmail.com','B+','Kandyd','Thihariyass','34#','778650336','cxczxcxvxcvc','upload/394839_1521640578.jpg','super admin',1),
-(15,'Today','Today','female','03/14/2018','134kg','today@gmail.com','AB+','Kandyd','Thihariyass','4567','0778665443','Amapara','upload/hire-php-developer-mumbai-india-ezeelive-technologies_1521645495.png','today',0),
-(17,'Thursday','Thursday','male','03/22/2018','100Kg','Thursday@gmail.com','A+','Kandyd','Thihariyass','TH78','778650336','ThursdayThursday','upload/Asian_Games_logo.svg_1521689309.png','super admin',1);
+insert  into `donor`(`donor_id`,`name`,`gender`,`phone`,`email`,`state`,`city`,`username_fk`,`status`) values 
+(1,'Donor 1','male',`070000000000`,'donor@gmail.com','Coast','Mombasa','Donor 1',1),
 
 /*Table structure for table `email_subs` */
 
@@ -200,34 +199,6 @@ insert  into `users`(`member_id`,`name`,`username`,`password`,`email`,`phone`,`a
 (2,'Doctor','hospital admin','admin',NULL,NULL,NULL,'hospital admin','upload/7015951-3d-funny-animal_1521603987.jpg'),
 (14,'Donor','donor','donor',NULL,NULL,NULL,'donor','upload/vehicle_1521645370.png');
 
-/*Table structure for table `requester` */
-
-DROP TABLE IF EXISTS `requester`;
-
-CREATE TABLE `requester` (
-  `requester_id` int(100) NOT NULL AUTO_INCREMENT,
-  `patient_name` varchar(100) DEFAULT NULL,
-  `gender` varchar(100) DEFAULT NULL,
-  `blood_group` varchar(100) DEFAULT NULL,
-  `unit_blood` varchar(100) DEFAULT NULL,
-  `hospital_name` varchar(100) DEFAULT NULL,
-  `date` date DEFAULT NULL,
-  `contact_person` varchar(120) DEFAULT NULL,
-  `address` varchar(200) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `contact_no` varchar(200) DEFAULT NULL,
-  `reason` varchar(200) DEFAULT NULL,
-  `member_fk` varchar(100) DEFAULT NULL,
-  `image` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`requester_id`),
-  KEY `member_fk` (`member_fk`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-
-/*Data for the table `requester` */
-
-insert  into `requester`(`requester_id`,`patient_name`,`gender`,`blood_group`,`unit_blood`,`hospital_name`,`date`,`contact_person`,`address`,`email`,`contact_no`,`reason`,`member_fk`,`image`) values 
-(6,'markcpp','female','b+','2','Lanka Hospital','0000-00-00','Hamad','Kandy','codeprojects@gmail.com','sdsadsad','Colombo','mhdcpj','upload/7015951-3d-funny-animal_1521728863.jpg');
-
 /*Table structure for table `state` */
 
 DROP TABLE IF EXISTS `state`;
@@ -243,8 +214,8 @@ CREATE TABLE `state` (
 /*Data for the table `state` */
 
 insert  into `state`(`state_id`,`state_code`,`state_name`,`description`) values 
-(36,'84603','Kandyd','New data been added'),
-(37,'CLM','Western','Province');
+(1,'Cst','Coast','Province'),
+(2,'Ctr','Central','Province');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
