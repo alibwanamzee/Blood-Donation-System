@@ -77,7 +77,7 @@
 			<div class="panel panel-headline">
 				<div class="panel-heading">
 					<h3 class="panel-title">Weekly Overview</h3>
-					<p class="panel-subtitle">Period: Oct 14, 2016 - Oct 21, 2016</p>
+					<p class="panel-subtitle">Period: Aug 20, 2023 - Aug 26, 2023</p>
 				</div>
 				<div class="panel-body">
 					<div class="row">
@@ -85,8 +85,8 @@
 							<div class="metric">
 								<span class="icon"><i class="fa fa-download"></i></span>
 								<p>
-									<span class="number">1,252</span>
-									<span class="title">Downloads</span>
+									<span class="number">0</span>
+									<span class="title">Reviews</span>
 								</p>
 							</div>
 						</div>
@@ -94,8 +94,8 @@
 							<div class="metric">
 								<span class="icon"><i class="fa fa-shopping-bag"></i></span>
 								<p>
-									<span class="number">203</span>
-									<span class="title">Sales</span>
+									<span class="number">0</span>
+									<span class="title">Rewards</span>
 								</p>
 							</div>
 						</div>
@@ -103,7 +103,7 @@
 							<div class="metric">
 								<span class="icon"><i class="fa fa-eye"></i></span>
 								<p>
-									<span class="number">274,678</span>
+									<span class="number">0</span>
 									<span class="title">Visits</span>
 								</p>
 							</div>
@@ -112,8 +112,7 @@
 							<div class="metric">
 								<span class="icon"><i class="fa fa-bar-chart"></i></span>
 								<p>
-									<span class="number">35%</span>
-									<span class="title">Conversions</span>
+									<span class="title">Contact and Support</span>
 								</p>
 							</div>
 						</div>
