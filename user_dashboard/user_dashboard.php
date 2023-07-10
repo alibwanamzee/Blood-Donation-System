@@ -14,7 +14,7 @@
 		<div class="container-fluid">
 			<!-- OVERVIEW -->
 			<h2>Welcome, <span style="color: blue"><?php echo $_SESSION['membername']?></span></h2><br />
-			<p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adddonor">Donate Blood</button></p><br />
+			<p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adddonor">Request Blood Donation</button></p><br />
 			
 			<!-- add donor modal -->
 			<div class="modal fade" id="adddonor" role="dialog">
@@ -28,7 +28,7 @@
 						<div class="modal-body">
 							<form action="add_donor.php" method="post" enctype="multipart/form-data">
 								<div class="form-group">
-									<input type="text" class="form-control" name="name" id="name" placeholder="Enter Full Name"></input>
+									<input type="text" class="form-control" name="name" id="name" placeholder="Enter Full Name" required></input>
 								</div>
 								<div class="form-group">
 									<select class="form-control" name="gender" id="gender">
@@ -38,7 +38,7 @@
 									</select>
 								</div>
 					<div class="form-group">
-									<input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone"></input>
+									<input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone" required></input>
 								</div>
 								<div class="form-group">
 									<input type="email" class="form-control" name="email" id="email" placeholder="Enter email"></input>
@@ -54,7 +54,7 @@
 									</select>
 								</div>
 								<div class="form-group">
-									<select class="form-control" name="city" id="city">
+									<select class="form-control" name="city" id="city" required>
 										<?php 
 										$state = $connection->query("SELECT * FROM city");
 										while($row = $state->fetch_array()){ ?>
@@ -68,6 +68,15 @@
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 							<button type="submit" class="btn btn-primary" name="addmember">Add</button>
 						</div>
+						<?php
+							$status = $_GET['status'] ?? '';
+
+							if ($status === 'success') {
+								echo '<script>alert("Request sent successfully!");</script>';
+							} elseif ($status === 'error') {
+								echo '<script>alert("Error occurred while requesting to donate blood.");</script>';
+							}
+						?>
 						</form>
 					</div>
 				</div>
