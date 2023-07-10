@@ -133,7 +133,7 @@
 												</div>
 												<div class="modal-body">
 									<?php
-										$select = $connection->query("SELECT * FROM member WHERE member_id='".$_SESSION['member_id']."'");
+										$select = $connection->query("SELECT * FROM users WHERE member_id='".$_SESSION['member_id']."'");
 										$fetc = $select->fetch_array(); ?>
 
 									
