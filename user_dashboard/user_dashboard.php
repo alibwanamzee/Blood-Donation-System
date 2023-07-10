@@ -80,43 +80,45 @@
 					<p class="panel-subtitle">Period: Aug 20, 2023 - Aug 26, 2023</p>
 				</div>
 				<div class="panel-body">
-					<div class="row">
-						<div class="col-md-3">
-							<div class="metric">
-								<span class="icon"><i class="fa fa-download"></i></span>
-								<p>
-									<span class="number">0</span>
-									<span class="title">Reviews</span>
-								</p>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="metric">
-								<span class="icon"><i class="fa fa-shopping-bag"></i></span>
-								<p>
-									<span class="number">0</span>
-									<span class="title">Rewards</span>
-								</p>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="metric">
-								<span class="icon"><i class="fa fa-eye"></i></span>
-								<p>
-									<span class="number">0</span>
-									<span class="title">Visits</span>
-								</p>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<div class="metric">
-								<span class="icon"><i class="fa fa-bar-chart"></i></span>
-								<p>
-									<span class="title">Contact and Support</span>
-								</p>
-							</div>
+				<div class="row">
+					<div class="col-md-3">
+						<div class="metric">
+							<span class="icon"><i class="fa fa-star"></i></span>
+							<p>
+								<span class="number">0</span>
+								<span class="title">Reviews</span>
+							</p>
 						</div>
 					</div>
+					<div class="col-md-3">
+						<div class="metric">
+							<span class="icon"><i class="fa fa-gift"></i></span>
+							<p>
+								<span class="number">0</span>
+								<span class="title">Rewards</span>
+							</p>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="metric">
+							<span class="icon"><i class="fa fa-eye"></i></span>
+							<p>
+								<span class="number">0</span>
+								<span class="title">Visits</span>
+							</p>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="metric">
+							<span class="icon"><i class="fa fa-phone"></i></span>
+							<p>
+								<span class="number">Support</span>
+								<span class="title">Contact</span>
+							</p>
+						</div>
+					</div>
+				</div>
+
 				</div>
 			</div>
 			<!-- END OVERVIEW -->
