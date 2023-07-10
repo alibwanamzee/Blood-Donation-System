@@ -22,8 +22,8 @@
 			<div class="main-content">
 				<div class="container-fluid">
 
-  <h2>Hello,  <span style="color: blue"> <?php echo $_SESSION['membername']?></span> Listed Requester. </h2> <br />
-  <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#needblood">Request For Blood</button></p> <br />           
+  <h2>Welcome,  <span style="color: blue"> <?php echo $_SESSION['membername']?></span></h2> <br />
+  <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#needblood">Donate Blood</button></p> <br />           
   
   <table class="table table-bordered" id="request">
     <thead>
@@ -33,8 +33,7 @@
         <th>Phone</th>
         <th>Hospital</th>
         <th>Image</th>
-        <th>Action</th>
-        
+        <th>Action</th>        
       </tr>
     </thead>
     <tbody>

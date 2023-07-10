@@ -35,21 +35,29 @@
 							</div>
 							<form class="form-auth-small" action="member_register.php" method="post">
 							<div class="form-group">
-									<label for="signin-email" class="control-label sr-only">Email</label>
+									<label for="signin-email" class="control-label sr-only">Fullname</label>
 									<input type="text" class="form-control" name="fullname" id="fullname" placeholder="Fullname" required="">
 								</div>
 								<div class="form-group">
-									<label for="signin-email" class="control-label sr-only">Email</label>
+									<label for="signin-email" class="control-label sr-only">Username</label>
 									<input type="text" class="form-control" name="username" id="username" placeholder="Username" required="">
 								</div>
 								<div class="form-group">
 									<label for="signin-password" class="control-label sr-only">Password</label>
 									<input type="password" class="form-control" id="password" name="password" placeholder="Password" required="">
 								</div>
-
 								<div class="form-group">
 									<label for="signin-password" class="control-label sr-only">Email</label>
 									<input type="email" class="form-control" id="email" name="email" placeholder="Email" required="">
+								</div>
+								<div class="form-group">
+									<label for="signin-password" class="control-label sr-only">user_type</label>
+									<input type="user_type" class="form-control" id="type" name="type" placeholder="user_type" required=""/>
+										<select name="" id="">
+											<option value="donor">Donor</option>
+											<option value="hospital admin">hospital Admin</option>
+											<option value="super admin" disabled>Super Admin</option>
+										</select>
 								</div>
 								<div class="form-group clearfix">
 									<label class="fancy-checkbox element-left">
@@ -68,7 +76,7 @@
 						<div class="overlay"></div>
 						<div class="content text">
 							<h1 class="heading">Welcome Blood Bank System</h1>
-							<p>Developed By <a href="http://shafraz.freeiz.com">Shafraz Nizam</a></p>
+							<p>Developed By <a href="http://shafraz.freeiz.com">Janja Programmers</a></p>
 						</div>
 					</div>
 					<div class="clearfix"></div>
