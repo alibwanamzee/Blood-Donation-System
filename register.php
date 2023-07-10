@@ -50,15 +50,6 @@
 									<label for="signin-password" class="control-label sr-only">Email</label>
 									<input type="email" class="form-control" id="email" name="email" placeholder="Email" required="">
 								</div>
-								<div class="form-group">
-									<label for="signin-password" class="control-label sr-only">user_type</label>
-									<input type="user_type" class="form-control" id="type" name="type" placeholder="user_type" required=""/>
-										<select name="" id="">
-											<option value="donor">Donor</option>
-											<option value="hospital admin">hospital Admin</option>
-											<option value="super admin" disabled>Super Admin</option>
-										</select>
-								</div>
 								<div class="form-group clearfix">
 									<label class="fancy-checkbox element-left">
 										<input type="checkbox">
