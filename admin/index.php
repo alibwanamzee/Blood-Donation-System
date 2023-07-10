@@ -2,6 +2,7 @@
     include('connection.php');
     session_start();
 ?>
+
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -11,6 +12,11 @@
         <div id="loginbox" style="margin-top:100px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
             <div class="panel panel-info" >
                     <div class="panel-heading">
+                    <?php
+				if(isset($_SESSION['success'])){
+					echo "Success";
+				}
+			?>
                         <div class="panel-title">Start Your Session Here </div>
                         <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#"></a></div>
                     </div>     
