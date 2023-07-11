@@ -1,3 +1,11 @@
+<?php
+	session_start();
+
+	if(!isset($_SESSION['membername']) AND $_SESSION['userid'] == ''){
+		header('location:login.php');
+	}
+    
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,7 +31,7 @@
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
-            height: 70vh;
+            height: 50vh;
         }
     </style>
 </head>
@@ -39,15 +47,17 @@
         </div>
         <div class="profile-detail">
             <div class="profile-info">
-                <h3 class="heading">Basic Info</h3>
+                <h3 class="heading">My Profile</h3>
                 <ul class="list-unstyled list-justify">
-                    <li>Birthdate <span>24 Aug, 2016</span></li>
-                    <li>Mobile <span>(124) 823409234</span></li>
-                    <li>Email <span>samuel@mydomain.com</span></li>
+                    <li>Name <span><?php echo $_SESSION['membername']?></span></li>
+                    <li>Mobile <span><?php echo $_SESSION['phone']?></span></li>
+                    <li>Email <span><?php echo $_SESSION['email']?></span></li>
                     </span></li>
                 </ul>
             </div>
-            <div class="text-center"><a href="edit_donor_profile.php" class="btn btn-primary">Edit Profile</a></div>
+            <div class="text-center">
+                <a href="user_dashboard/user_dashboard.php" class="btn btn-success">Back</a>
+            </div>
         </div>
     </div>
     <footer>
