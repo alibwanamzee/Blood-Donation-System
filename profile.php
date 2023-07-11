@@ -31,7 +31,7 @@
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
-            height: 50vh;
+            height: 60vh;
         }
     </style>
 </head>

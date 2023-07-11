@@ -74,7 +74,7 @@
 		<div class="clearfix"></div>
 		<footer>
 			<div class="container-fluid">
-				<p class="copyright">&copy; 2018 Brought To You By <a href="http://code-projects.org/" target="_blank">Code-Projects</a>.</p>
+				<p class="copyright">&copy; 2023.</p>
 			</div>
 		</footer>
 	</div>
