@@ -47,7 +47,7 @@
                     </span></li>
                 </ul>
             </div>
-            <div class="text-center"><a href="#" class="btn btn-primary">Edit Profile</a></div>
+            <div class="text-center"><a href="edit_donor_profile.php" class="btn btn-primary">Edit Profile</a></div>
         </div>
     </div>
     <footer>
