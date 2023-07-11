@@ -34,7 +34,7 @@
 <body>
 	<!-- WRAPPER -->
 	<div id="wrapper">
-		<!-- NAVBAR -->
+		<!-- NAVBAR..-->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
 				<a href="index.html"><img src=""  class="img-responsive logo"></a>
