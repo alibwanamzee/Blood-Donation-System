@@ -52,16 +52,15 @@
 			
 				<div id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
-						
 						<li class="dropdown">
-						<?php
-						$image = $connection->query("SELECT * FROM users WHERE username='".$_SESSION['membername']."'");
-						$row = $image->fetch_array(); ?>
+							<?php
+							$image = $connection->query("SELECT * FROM users WHERE username='".$_SESSION['membername']."'");
+							$row = $image->fetch_array(); ?>
 						
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="../<?php echo $row['profile'];?>" class="img-circle" alt="Avatar"> <?php ?> <span><?php echo $_SESSION['membername'];?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="./view_donor.php" class="dropdown-toggle" data-toggle="dropdown"><img src="../<?php echo $row['profile'];?>" class="img-circle" alt="Avatar"> <?php ?> <span><?php echo $_SESSION['membername'];?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+
 							<ul class="dropdown-menu">
-								<li><a href="" data-toggle="modal" data-target="#profile"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
-								
+								<li><a href="./view_donor.php" data-toggle="modal" data-target="/admin/edit_profile.php"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>								
 								<li><a href="" data-toggle="modal" data-target="#logout"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 							</ul>
 						</li>
@@ -71,6 +70,7 @@
 			</div>
 		</nav>
 		<!-- END NAVBAR -->
+
 		<!-- LEFT SIDEBAR -->
 		<div id="sidebar-nav" class="sidebar">
 			<div class="sidebar-scroll">
@@ -83,7 +83,7 @@
 		</div>
 
 		<!-- logout modal -->
-		 <div class="modal fade" id="logout" role="dialog">
+		<div class="modal fade" id="logout" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
@@ -110,9 +110,6 @@
         <div class="modal-header">
           <button type="button" class="close" data-target="donor.php" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Edit My Profile</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
