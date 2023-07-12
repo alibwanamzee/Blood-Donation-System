@@ -14,7 +14,7 @@
 			<div class="main-content">
 				<div class="container-fluid">
 
-  <h2>Hello,  <span style="color: blue"> <?php echo $_SESSION['username']?></span> Manage Members Here. </h2> <br />
+  <h2>Hello,  <span style="color: blue"> <?php echo $_SESSION['username']?></span><br />Manage Donors</h2> <br />
   <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addmember">Add new</button></p> <br />           
   <table class="table table-bordered" id="members">
     <thead>
