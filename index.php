@@ -68,7 +68,7 @@
 						<div class="overlay"></div>
 						<div class="content text">
 							<h1 class="heading">WELCOME TO BLOOD BANK SYSTEM</h1>
-							<p>Brought To You By code-projects.org</p>
+							<p>Designed courtesy of Janja Programmers</p>
 						</div>
 					</div>
 					<div class="clearfix"></div>
