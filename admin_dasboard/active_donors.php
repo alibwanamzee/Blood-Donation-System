@@ -23,7 +23,7 @@
 			<div class="main-content">
 				<div class="container-fluid">
 
-  <h2>Welcome,  <span style="color: blue"> <?php echo $_SESSION['username']?></span><br /> Manage Donors</h2> <br />
+  <h2>Welcome,  <span style="color: blue"> <?php echo $_SESSION['username']?></span><br /> Manage Active Donors</h2> <br />
   <!-- <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adddonor">Add new</button></p> <br /> -->           
   <table class="table table-bordered" id="donors">
     <thead>
@@ -46,8 +46,11 @@
         <td><?php echo $row['gender'];?></td>
       	<td><?php echo $row['phone'];?></td>
         <td><?php echo $row['username_fk'];?></td>
-      	<td><button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']?>" class="btn btn-danger">Delete</button>
-        <button type="button" data-toggle="modal" data-target="#editdonor<?php echo $row['donor_id'];?>" class="btn btn-warning">Edit</button></td>
+      	<td>
+          <button type="button" data-toggle="modal" data-target="#editdonor<?php echo $row['donor_id'];?>" class="btn btn-warning">Edit</button>
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#active<?php echo $row['donor_id']?>" <?php if($row['status'] == '1') { echo 'disable'; }?>><?php if($row['status'] == '1') { echo 'Deactivated'; } else {  echo 'Deactivate'; } ?></button>
+          <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']?>" class="btn btn-danger">Delete</button>
+        </td>
       	</tr>
       	 <!-- delete city modal -->
       	<div class="modal fade" id="deletdonor<?php echo $row['donor_id']?>" role="dialog">
