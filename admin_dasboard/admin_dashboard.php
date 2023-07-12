@@ -16,7 +16,7 @@
 					</div>
 					<div class="panel-body">
 						<div class="row">
-							<div class="col-md-3">
+							<div class="col-md-4">
 								<div class="metric">
 									<span class="icon"><i class="fa fa-map"></i></span>
 									<p>
@@ -25,7 +25,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-4">
 								<div class="metric">
 									<span class="icon"><i class="fa fa-home"></i></span>
 									<p>
@@ -34,24 +34,16 @@
 									</p>
 								</div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-4">
 								<div class="metric">
 									<span class="icon"><i class="fa fa-user-md"></i></span>
 									<p>
 										<span class="title">0</span>
-										<span class="number">Doctors</span>
+										<span class="number">Users</span>
 									</p>
 								</div>
 							</div>
-							<div class="col-md-3">
-								<div class="metric">
-									<span class="icon"><i class="fa fa-heartbeat"></i></span>
-									<p>
-										<span class="title">0</span>
-										<span class="number">Donors</span>
-									</p>
-								</div>
-							</div>
+							
 						</div>
 						<div class="row">
 							<div class="col-md-9">
