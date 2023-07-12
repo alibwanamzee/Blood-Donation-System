@@ -14,8 +14,8 @@
 			<div class="main-content">
 				<div class="container-fluid">
 
-  <h2>Hello,  <span style="color: blue"> <?php echo $_SESSION['username']?></span> Manage State Here. </h2> <br />
-  <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addstate">Add new</button></p>    <br />         
+  <h2>Welcome, <span style="color: blue"><?php echo $_SESSION['username']?></span> <br />Manage State</h2> <br />
+  <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addstate">Add new state</button></p>    <br />         
   <table class="table table-bordered" id="state">
     <thead>
       <tr>
@@ -28,7 +28,6 @@
       <?php
       $select = $connection->query("SELECT * FROM state");
       while($row = $select->fetch_array()){ ?>
-
       	<tr>
       		<td><?php echo $row['state_code'];?></td>
       		<td><?php echo $row['state_name'];?></td>
