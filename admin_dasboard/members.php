@@ -127,6 +127,7 @@
           <h4 class="modal-title">Add Members</h4>
         </div>
         <div class="modal-body">
+
         <form action="add_member.php" method="post" enctype="multipart/form-data">
           <div class="form-group">
           	<input type="text" class="form-control" name="name" id="name" placeholder="Enter Name"></input>
@@ -154,6 +155,10 @@
           <div class="form-group">
             <input type="file" class="form-control" name="photo" id="photo" ></input>
           </div>
+
+          <div class="form-group">
+          	<input type="text" class="form-control" name="user_type" id="user_type" placeholder="Enter User Type"></input>
+          </div>  
           
         </div>
         <div class="modal-footer">
