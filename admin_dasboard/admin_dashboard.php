@@ -12,7 +12,7 @@
 				<div class="panel panel-headline">
 					<div class="panel-heading">
 						<h3 class="panel-title"><b>System Management</b></h3>
-						<p class="panel-subtitle">Period: July 14, 2023 - <?php $currentDate = date('F d, Y');echo $currentDate;?></p>
+						<p class="panel-subtitle">Period: July 04, 2023 - <?php $currentDate = date('F d, Y');echo $currentDate;?></p>
 					</div>
 					<div class="panel-body">
 						<div class="row">

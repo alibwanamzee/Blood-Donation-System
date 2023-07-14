@@ -29,11 +29,9 @@
     <thead>
       <tr>
         <th>Name</th>
-    
         <th>Gender</th>
         <th>Phone</th>
         <th>By </th>
-        <th>Image</th>
         <th>Action</th>
         
       </tr>
@@ -48,21 +46,14 @@
         <td><?php echo $row['name'];?></td>
         <td><?php echo $row['gender'];?></td>
       	<td><?php echo $row['phone'];?></td>
-        <td><?php echo $row['username_fk'];?></td>
-       
-        <td><?php if($row['image'] == ''){ ?>
-        <img src="http://wiki.bdtnrm.org.au/images/8/8d/Empty_profile.jpg" width="30px" height="30px">
-        <?php   } else { ?>
-        <img src="../<?php echo $row['image'];?>" width="30px" height="30px">
-        <?php  } ?></td>
-      		
-      		<td><button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']?>" class="btn btn-danger">Delete</button>
+        <td><?php echo $row['username_fk'];?></td>      		
+      	<td>
+          <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']?>" class="btn btn-danger">Delete</button>
       		<button type="button" data-toggle="modal" data-target="#editdonor<?php echo $row['donor_id'];?>" class="btn btn-warning">Edit</button>
-
-
           <button type="button" class="btn btn-default" data-toggle="modal" data-target="#active<?php echo $row['donor_id']?>" <?php if($row['status'] == '1') { echo 'disabled'; }?>><?php
           if($row['status'] == '1') { echo 'Activated'; } else {  echo 'Active'; }
-           ?></button></td>
+           ?></button>
+        </td>
          
       	</tr>
       	 <!-- delete city modal -->
