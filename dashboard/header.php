@@ -77,9 +77,11 @@
 						<li class="menu-item" onclick="toggleActive(this)"><a href="admin_dashboard.php" class=" menu-item " onclick="toggleActive(this)"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li class="menu-item" onclick="toggleActive(this)"><a href="state.php" ><i class="lnr lnr-code"></i> <span>State</span></a></li>
 						<li class="menu-item" onclick="toggleActive(this)"><a href="city.php" ><i class="lnr lnr-chart-bars"></i> <span>City</span></a></li>
-						<li class="menu-item" onclick="toggleActive(this)"><a href="members.php" ><i class="lnr lnr-cog"></i> <span>Users</span></a></li>	
+						<li class="menu-item" onclick="toggleActive(this)"><a href="members.php" ><i class="lnr lnr-cog"></i> <span>Users</span></a></li>
+					<!--	
 						<li class="menu-item" onclick="toggleActive(this)"><a href="donor.php" ><i class="lnr lnr-alarm"></i> <span>Non Active Donors</span></a></li>
 						<li class="menu-item" onclick="toggleActive(this)"><a href="active_donors.php" class=""><i class="lnr lnr-alarm"></i> <span>Active Donors</span></a></li>
+					-->	
 					</ul>
 				</nav>
 			</div>
