@@ -24,7 +24,7 @@
 				<div class="container-fluid">
 
   <h2>Hello,  <span style="color: blue"> <?php echo $_SESSION['username']?></span> Manage Donors Here. </h2> <br />
-  <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adddonor">Add new</button></p> <br />           
+  <!-- <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adddonor">Add new</button></p> <br /> -->           
   <table class="table table-bordered" id="donors">
     <thead>
       <tr>
@@ -38,7 +38,7 @@
     </thead>
     <tbody>
       <?php
-      $members= $connection->query("SELECT * FROM donor");
+      $members= $connection->query("SELECT * FROM donor WHERE status='1'");
       while($row = $members->fetch_array()) {
        ?>
 
@@ -46,15 +46,11 @@
         <td><?php echo $row['name'];?></td>
         <td><?php echo $row['gender'];?></td>
       	<td><?php echo $row['phone'];?></td>
-        <td><?php echo $row['username_fk'];?></td>      		
+        <td><?php echo $row['username_fk'];?></td>
       	<td>
           <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']?>" class="btn btn-danger">Delete</button>
-      		<button type="button" data-toggle="modal" data-target="#editdonor<?php echo $row['donor_id'];?>" class="btn btn-warning">Edit</button>
-          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#active<?php echo $row['donor_id']?>" <?php if($row['status'] == '1') { echo 'disabled'; }?>><?php
-          if($row['status'] == '1') { echo 'Activated'; } else {  echo 'Active'; }
-           ?></button>
+      	  <button type="button" data-toggle="modal" data-target="#editdonor<?php echo $row['donor_id'];?>" class="btn btn-warning">Edit</button>\
         </td>
-         
       	</tr>
       	 <!-- delete city modal -->
       	<div class="modal fade" id="deletdonor<?php echo $row['donor_id']?>" role="dialog">
@@ -74,30 +70,45 @@
       </div>
     </div>
   </div>
-  <!-- end of delete state modal -->
-  <!-- active modal -->
-  <div class="modal fade" id="active<?php echo $row['donor_id']?>" role="dialog">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
+  <!-- end of delete state modal-->
+
+  <!-- edit member modal -->
+  <div class="modal fade" id="editdonor<?php echo $row['donor_id'];?>" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <!-- <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Are you sure ?</h4>
+          <h4 class="modal-title">Edit Member</h4>
         </div>
         <div class="modal-body">
-          <p>Want to activated this record? ?</p>
-          <form action="edit_status.php?status_id=<?php echo $row['donor_id']?>" method="post">
-            <input type="hidden" name="status" value="1"></input>
-        
+        <form enctype="multipart/form-data" action="edit_member.php?member_id=<?php echo $row['member_id'];?>" method="post" >
+         <div class="form-group">
+           <input type="text" name="name" id="name" class="form-control" value="<?php echo $row['name']?>"></input>
+         </div>
+          <div class="form-group">
+           <input type="text" name="username" id="username" class="form-control" value="<?php echo $row['username']?>" disabled=""></input>
+         </div>
+
+          <div class="form-group">
+           <input type="text" name="password" id="password" class="form-control" disabled="" value="<?php echo $row['password']?>" ></input>
+         </div>
+         
+         <div class="form-group">
+           <input type="file" name="photo" id="photo" class="form-control" ></input>
+         </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-         <button type="submit" class="btn btn-success">Activate</button>
-        </div>
-        </form>
-      </div>
-    </div>
-  </div>
+          <button type="submit" class="btn btn-warning">Edit</button>
 
+        </div>
+      </div>
+      </form>
+      
+    </div>
+  </div>  -->
    
 <?php }
       ?>
@@ -144,16 +155,6 @@
           </div>
           <div class="form-group">
             <input type="email" class="form-control" name="email" id="email" placeholder="Enter email"></input>
-          </div>
-          <div class="form-group">
-            <select class="form-control" name="blood" id="blood" >
-            <option value="A+">A+</option>
-            <option value="B+">B+</option>
-            <option value="O+">O+</option>
-            <option value="AB+">AB+</option>
-
-             
-            </select>
           </div>
 
            <div class="form-group">
