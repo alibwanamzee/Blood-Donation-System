@@ -17,7 +17,7 @@
 		} elseif ($fetch['usertype'] == 'hospital admin')  {
 			$_SESSION['userid'] = $fetch['user_id'];
 			$_SESSION['membername'] = $fetch['username'];
-			header('location:admin/home.php');
+			header('location:/Blood_donation_system/admin/home.php');
 
 		} elseif ($fetch['usertype'] == 'donor')  {
 			$_SESSION['userid'] = $fetch['user_id'];
@@ -26,6 +26,6 @@
 		} 
 	}else {
 		$_SESSION['error'] = '';
-		header('location:index.php');	
+		header('location:../index.php');	
 	}
 ?>

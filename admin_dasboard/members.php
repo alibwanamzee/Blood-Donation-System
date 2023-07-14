@@ -14,7 +14,7 @@
 			<div class="main-content">
 				<div class="container-fluid">
 
-  <h2>Hello,  <span style="color: blue"> <?php echo $_SESSION['username']?></span> Manage Members Here. </h2> <br />
+  <h2>Hello,  <span style="color: blue"> <?php echo $_SESSION['username']?></span><br />Manage Donors</h2> <br />
   <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addmember">Add new</button></p> <br />           
   <table class="table table-bordered" id="members">
     <thead>
@@ -127,6 +127,7 @@
           <h4 class="modal-title">Add Members</h4>
         </div>
         <div class="modal-body">
+
         <form action="add_member.php" method="post" enctype="multipart/form-data">
           <div class="form-group">
           	<input type="text" class="form-control" name="name" id="name" placeholder="Enter Name"></input>
@@ -154,6 +155,10 @@
           <div class="form-group">
             <input type="file" class="form-control" name="photo" id="photo" ></input>
           </div>
+
+          <div class="form-group">
+          	<input type="text" class="form-control" name="user_type" id="user_type" placeholder="Enter User Type"></input>
+          </div>  
           
         </div>
         <div class="modal-footer">

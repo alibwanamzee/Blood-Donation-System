@@ -4,6 +4,19 @@ $(document).ready(function() {
 	/*	TOP NAVIGATION AND LAYOUT
 	/*----------------------------------*/
 
+	function toggleActive(element) {
+		// Remove active class from all menu items
+		var menuItems = document.getElementsByClassName('menu-item');
+		for (var i = 0; i < menuItems.length; i++) {
+		  menuItems[i].classList.remove('active');
+		}
+		
+		// Add active class to the clicked menu item
+		element.classList.add('active');
+	  }
+	  
+
+
 	$('.btn-toggle-fullwidth').on('click', function() {
 		if(!$('body').hasClass('layout-fullwidth')) {
 			$('body').addClass('layout-fullwidth');
@@ -221,5 +234,19 @@ $.fn.clickToggle = function( f1, f2 ) {
 	});
 
 }
+
+//Additional Toggle Function
+function toggleActive(element) {
+	// Remove active class from all menu items
+	var menuItems = document.getElementsByClassName('menu-item');
+	for (var i = 0; i < menuItems.length; i++) {
+	  menuItems[i].classList.remove('active');
+	}
+	
+	// Add active class to the clicked menu item
+	element.classList.add('active');
+  }
+  
+toggleActive();
 
 

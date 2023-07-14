@@ -23,19 +23,16 @@
 			<div class="main-content">
 				<div class="container-fluid">
 
-  <h2>Hello,  <span style="color: blue"> <?php echo $_SESSION['username']?></span> Manage Donors Here. </h2> <br />
+  <h2>Welcome,  <span style="color: blue"> <?php echo $_SESSION['username']?></span><br /> Manage Active Donors</h2> <br />
   <!-- <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adddonor">Add new</button></p> <br /> -->           
   <table class="table table-bordered" id="donors">
     <thead>
       <tr>
-        <th>Name</th>
-    
+        <th>Full Name</th>
         <th>Gender</th>
         <th>Phone</th>
-        <th>By </th>
-        <th>Image</th>
+        <th>Added By</th>
         <th>Action</th>
-        
       </tr>
     </thead>
     <tbody>
@@ -49,15 +46,11 @@
         <td><?php echo $row['gender'];?></td>
       	<td><?php echo $row['phone'];?></td>
         <td><?php echo $row['username_fk'];?></td>
-       
-        <td><?php if($row['image'] == ''){ ?>
-        <img src="http://wiki.bdtnrm.org.au/images/8/8d/Empty_profile.jpg" width="30px" height="30px">
-        <?php   } else { ?>
-        <img src="../<?php echo $row['image'];?>" width="30px" height="30px">
-        <?php  } ?></td>
-      		
-      		<td><button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']?>" class="btn btn-danger">Delete</button>
-      		<button type="button" data-toggle="modal" data-target="#editdonor<?php echo $row['donor_id'];?>" class="btn btn-warning">Edit</button></td>
+      	<td>
+          <button type="button" data-toggle="modal" data-target="#editdonor<?php echo $row['donor_id'];?>" class="btn btn-warning">Edit</button>
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#active<?php echo $row['donor_id']?>" <?php if($row['status'] == '1') { echo 'disable'; }?>><?php if($row['status'] == '1') { echo 'Deactivated'; } else {  echo 'Deactivate'; } ?></button>
+          <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']?>" class="btn btn-danger">Delete</button>
+        </td>
       	</tr>
       	 <!-- delete city modal -->
       	<div class="modal fade" id="deletdonor<?php echo $row['donor_id']?>" role="dialog">
@@ -77,7 +70,7 @@
       </div>
     </div>
   </div>
-  <!-- end of delete state modal
+  <!-- end of delete state modal-->
 
   <!-- edit member modal -->
   <div class="modal fade" id="editdonor<?php echo $row['donor_id'];?>" role="dialog">

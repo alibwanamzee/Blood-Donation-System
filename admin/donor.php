@@ -23,13 +23,12 @@
 			<div class="main-content">
 				<div class="container-fluid">
 
-  <h2>Hello,  <span style="color: blue"> <?php echo $_SESSION['username']?></span> Manage Donors Here. </h2> <br />
-  <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adddonor">Add new</button></p> <br />           
+  <h2>Welcome,  <span style="color: blue"> <?php echo $_SESSION['username']?></span><br />Manage NonActive Donors</h2> <br />
+  <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adddonor">Add New Donor</button></p> <br />           
   <table class="table table-bordered" id="donors">
     <thead>
       <tr>
         <th>Name</th>
-    
         <th>Gender</th>
         <th>Phone</th>
         <th>By </th>
@@ -44,29 +43,27 @@
       while($row = $members->fetch_array()) {
        ?>
 
-      	<tr>
+      <tr>
         <td><?php echo $row['name'];?></td>
         <td><?php echo $row['gender'];?></td>
       	<td><?php echo $row['phone'];?></td>
         <td><?php echo $row['username_fk'];?></td>
        
-        <td><?php if($row['image'] == ''){ ?>
+        <!-- <td><?php if($row['image'] == ''){ ?>
         <img src="http://wiki.bdtnrm.org.au/images/8/8d/Empty_profile.jpg" width="30px" height="30px">
         <?php   } else { ?>
         <img src="../<?php echo $row['image'];?>" width="30px" height="30px">
-        <?php  } ?></td>
+        <?php  } ?></td> -->
       		
-      		<td><button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']?>" class="btn btn-danger">Delete</button>
-      		<button type="button" data-toggle="modal" data-target="#editdonor<?php echo $row['donor_id'];?>" class="btn btn-warning">Edit</button>
-
-
-          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#active<?php echo $row['donor_id']?>" <?php if($row['status'] == '1') { echo 'disabled'; }?>><?php
-          if($row['status'] == '1') { echo 'Activated'; } else {  echo 'Active'; }
-           ?></button></td>
+        <td>
+          <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']?>" class="btn btn-danger">Delete</button>
+          <button type="button" data-toggle="modal" data-target="#editdonor<?php echo $row['donor_id'];?>" class="btn btn-warning">Edit</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#active<?php echo $row['donor_id']?>" <?php if($row['status'] == '1') { echo 'disabled'; }?>><?php if($row['status'] == '1') { echo 'Activated'; } else {  echo 'Active'; } ?></button>
+        </td>
          
-      	</tr>
+      </tr>
       	 <!-- delete city modal -->
-      	<div class="modal fade" id="deletdonor<?php echo $row['donor_id']?>" role="dialog">
+    <div class="modal fade" id="deletdonor<?php echo $row['donor_id']?>" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">
