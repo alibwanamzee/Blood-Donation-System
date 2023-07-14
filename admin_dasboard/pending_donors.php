@@ -48,10 +48,9 @@
       	<td><?php echo $row['phone'];?></td>
         <td><?php echo $row['username_fk'];?></td>      		
       	<td>
-          <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']?>" class="btn btn-danger">Delete</button>
-      		<button type="button" data-toggle="modal" data-target="#editdonor<?php echo $row['donor_id'];?>" class="btn btn-warning">Edit</button>
+          <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']?>" class="btn btn-danger">Reject</button>
           <button type="button" class="btn btn-default" data-toggle="modal" data-target="#active<?php echo $row['donor_id']?>" <?php if($row['status'] == '1') { echo 'disabled'; }?>><?php
-          if($row['status'] == '1') { echo 'Activated'; } else {  echo 'Active'; }
+          if($row['status'] == '1') { echo 'Accepted'; } else {  echo 'Accept'; }
            ?></button>
         </td>
          
@@ -65,11 +64,11 @@
           <h4 class="modal-title">Are you sure ?</h4>
         </div>
         <div class="modal-body">
-          <p>Want to delete ?</p>
+          <p>Want to reject request?</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-         <a href="delete_donor.php?donor_id=<?php echo $row['donor_id'];?>"> <button type="button" class="btn btn-danger">Delete</button></a>
+         <a href="delete_donor.php?donor_id=<?php echo $row['donor_id'];?>"> <button type="button" class="btn btn-danger">Reject</button></a>
         </div>
       </div>
     </div>
@@ -84,14 +83,14 @@
           <h4 class="modal-title">Are you sure ?</h4>
         </div>
         <div class="modal-body">
-          <p>Want to activated this record? ?</p>
+          <p>Want to accept this request? ?</p>
           <form action="edit_status.php?status_id=<?php echo $row['donor_id']?>" method="post">
             <input type="hidden" name="status" value="1"></input>
         
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-         <button type="submit" class="btn btn-success">Activate</button>
+         <button type="submit" class="btn btn-success">Accept</button>
         </div>
         </form>
       </div>
