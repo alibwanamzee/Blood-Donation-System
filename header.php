@@ -29,7 +29,7 @@
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
-	<script src="assets/scripts/klorofil-common.js"></script>
+
 </head>
 
 <body>
@@ -58,9 +58,9 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="../assets/img/user.png" class="img-circle" alt="Avatar"> <span><?php echo $_SESSION['username'];?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-							<li><a href="" data-toggle="modal" data-target="#profile"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
+								<li><a href="" data-toggle="modal" data-target="#profile"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
 								
-							<li><a href="" data-toggle="modal" data-target="#logout"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+								<li><a href="" data-toggle="modal" data-target="#logout"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 							</ul>
 						</li>
 						
@@ -74,52 +74,51 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="admin_dashboard.php"><i class="lnr lnr-home active"></i> <span>Dashboard</span></a></li>
-						<li><a href="state.php" ><i class="lnr lnr-code"></i> <span>State</span></a></li>
-						<li><a href="city.php" ><i class="lnr lnr-chart-bars"></i> <span>City</span></a></li>
-						<li><a href="members.php" ><i class="lnr lnr-cog"></i> <span>Users</span></a></li>	
-						<li><a href="pending_donors.php" ><i class="lnr lnr-alarm"></i> <span>Pending Donors</span></a></li>
-						<li><a href="approved_donors.php" class=""><i class="lnr lnr-alarm"></i> <span>Approved Donor</span></a></li>
-						<li><a href="active_donors.php" class=""><i class="lnr lnr-alarm"></i> <span>Active Donors</span></a></li>
+						<li><a href="admin_dashboard.php" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li><a href="state.php" class=""><i class="lnr lnr-code"></i> <span>State</span></a></li>
+						<li><a href="city.php" class=""><i class="lnr lnr-chart-bars"></i> <span>City</span></a></li>
+						<li><a href="members.php" class=""><i class="lnr lnr-cog"></i> <span>Users</span></a></li>
+						<li><a href="pending_donors.php" class=""><i class="lnr lnr-alarm"></i> <span>Pending Donors</span></a></li>
+						<li><a href="approved_donors.php" class=""><i class="lnr lnr-alarm"></i> <span>Approved Donors</span></a></li>
+						<li><a href="active_donors.php" class=""><i class="lnr lnr-alarm"></i> <span>Active Donors</span></a><li>					
 					</ul>
 				</nav>
 			</div>
 		</div>
 
 		<div class="modal fade" id="logout" role="dialog">
-			<div class="modal-dialog modal-sm">
-			<div class="modal-content">
-				<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">Are you sure ?</h4>
-				</div>
-				<div class="modal-body">
-				<p>Want to logout now ?</p>
-				</div>
-				<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<a href="../logout.php"> <button type="button" class="btn btn-danger">Logout</button></a>
-				</div>
-			</div>
-			</div>
-		</div>
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Are you sure ?</h4>
+        </div>
+        <div class="modal-body">
+          <p>Want to logout now ?</p>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         <a href="../logout.php"> <button type="button" class="btn btn-danger">Logout</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- edit profile modal -->
-		<div class="modal fade" id="profile" role="dialog">
-			<div class="modal-dialog">
-			<!-- Modal content-->
-			<div class="modal-content">
-				<div class="modal-header">
-				<button type="button" class="close" data-target="donor.php" data-dismiss="modal">&times;</button>
-				</div>
-				<div class="modal-body">
-				<a href="../profile.php" class="btn btn-primary">View Profile</a>
-				</div>
-				<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			</div>   
-			</div>
-		</div>
-	</div>
-</body>
+  <div class="modal fade" id="profile" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-target="donor.php" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <a href="profile.php" class="btn btn-primary">View Profile</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+ </div>
+  
