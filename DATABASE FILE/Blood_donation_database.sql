@@ -131,10 +131,15 @@ CREATE TABLE `donor` (
   `donor_id` int(100) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
   `gender` varchar(100) DEFAULT NULL,
-  `phone` varchar(100) DEFAULT NULL,
+  `datepicker` varchar(100) DEFAULT NULL,
+  `body_weight` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
+  `blood_group`varchar(100) DEFAULT NULL,
   `state` varchar(100) DEFAULT NULL,
   `city` varchar(100) DEFAULT NULL,
+  `pincode` varchar(100) DEFAULT NULL,
+  `phone` varchar(100) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
   `username_fk` varchar(100) NOT NULL,
   `status` int(12) DEFAULT NULL,
   PRIMARY KEY (`donor_id`,`username_fk`),
@@ -143,8 +148,8 @@ CREATE TABLE `donor` (
 
 /*Data for the table `donor` */
 
-insert  into `donor`(`donor_id`,`name`,`gender`,`phone`,`email`,`state`,`city`,`username_fk`,`status`) values 
-(1,'Donor 1','male','0700000000','donor@gmail.com','Coast','Mombasa','donor',1);
+insert  into `donor`(`donor_id`,`name`,`gender`,`datepicker`,`body_weight`,`email`,`blood_group`,`state`,`city`,`pincode`,`phone`,`address`,`username_fk`,`status`) values 
+(1,'Donor 1','male','','','donor@gmail.com','','Coast','Mombasa','','0700000000','','donor',1);
 
 /*Table structure for table `email_subs` */
 

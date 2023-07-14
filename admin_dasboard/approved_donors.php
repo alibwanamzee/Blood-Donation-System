@@ -49,7 +49,7 @@
         <td><?php echo $row['username_fk'];?></td>
       	<td>
           <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']?>" class="btn btn-danger">Delete</button>
-      	  <button type="button" data-toggle="modal" data-target="#editdonor<?php echo $row['donor_id'];?>" class="btn btn-warning">Edit</button>\
+      	  <button type="button" data-toggle="modal" data-target="#editdonor<?php echo $row['donor_id'];?>" class="btn btn-warning">Edit</button>
         </td>
       	</tr>
       	 <!-- delete city modal -->
