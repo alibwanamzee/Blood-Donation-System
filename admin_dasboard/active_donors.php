@@ -31,8 +31,6 @@
             <th>Name</th>
             <th>Gender</th>
             <th>Phone</th>
-            <th>By</th>
-            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -44,10 +42,6 @@
             <td><?php echo $row['name']; ?></td>
             <td><?php echo $row['gender']; ?></td>
             <td><?php echo $row['phone']; ?></td>
-            <td><?php echo $row['username_fk']; ?></td>
-            <td>
-              <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']; ?>" class="btn btn-success">Send Alert</button>
-            </td>
           </tr>
           <?php
           }
