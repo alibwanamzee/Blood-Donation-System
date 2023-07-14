@@ -9,12 +9,12 @@
 
 	$fetch = $login->fetch_array();
 	if($login->num_rows == 1){
-		if($fetch['usertype'] == 'super admin'){
+		if($fetch['usertype'] == 'admin'){
 			$_SESSION['member_id'] = $fetch['member_id'];
 			$_SESSION['username'] = $fetch['username'];
 			header('location:admin_dasboard/admin_dashboard.php');
 
-		} elseif ($fetch['usertype'] == 'hospital admin')  {
+		} elseif ($fetch['usertype'] == 'phlebotomists')  {
 			$_SESSION['userid'] = $fetch['user_id'];
 			$_SESSION['membername'] = $fetch['username'];
 			header('location:/Blood_donation_system/admin/home.php');

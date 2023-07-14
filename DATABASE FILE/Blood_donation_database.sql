@@ -181,8 +181,8 @@ CREATE TABLE `users` (
 /*Data for the table `users` */
 
 insert  into `users`(`member_id`,`name`,`username`,`password`,`email`,`phone`,`address`,`usertype`,`profile`) values 
-(1,'Admin','super admin','admin',NULL,NULL,NULL,'super admin','upload/3_1521639658.jpg'),
-(2,'Doctor','hospital admin','admin',NULL,NULL,NULL,'hospital admin','upload/7015951-3d-funny-animal_1521603987.jpg'),
+(1,'Admin','admin','admin',NULL,NULL,NULL,'admin','upload/3_1521639658.jpg'),
+(2,'Phlebotomists','phlebotomists','1234',NULL,NULL,NULL,'phlebotomists','upload/7015951-3d-funny-animal_1521603987.jpg'),
 (14,'Donor','donor','donor',NULL,NULL,NULL,'donor','upload/vehicle_1521645370.png');
 
 /*Table structure for table `state` */
