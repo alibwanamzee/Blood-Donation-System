@@ -23,7 +23,7 @@
 			<div class="main-content">
 				<div class="container-fluid">
 
-  <h2>Hello,  <span style="color: blue"> <?php echo $_SESSION['username']?></span> Manage Donors Here. </h2> <br />
+  <h2>Welcome,  <span style="color: blue"> <?php echo $_SESSION['username']?></span><br /> Manage Active Donors </h2> <br />
   <!-- <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adddonor">Add new</button></p> <br /> -->           
   <table class="table table-bordered" id="donors">
     <thead>
