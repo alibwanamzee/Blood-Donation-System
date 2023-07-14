@@ -58,7 +58,7 @@
 								</div>
 								<button type="submit" class="btn btn-primary btn-lg btn-block">REGISTER</button>
 								<div class="bottom">
-									<span class="helper-text"><i class="fa fa-lock"></i> <a href="index.php">Are You A Member? </a></span>
+									<span class="helper-text">Already have an account?  <a href="index.php">Login</a></span>
 								</div>
 							</form>
 						</div>
@@ -66,8 +66,8 @@
 					<div class="right">
 						<div class="overlay"></div>
 						<div class="content text">
-							<h1 class="heading">Welcome Blood Bank System</h1>
-							<p>Developed By <a href="http://shafraz.freeiz.com">Janja Programmers</a></p>
+							<h1 class="heading">Welcome to Blood Bank System</h1>
+							<!-- <p>Developed By <a href="http://shafraz.freeiz.com">Janja Programmers</a></p> -->
 						</div>
 					</div>
 					<div class="clearfix"></div>

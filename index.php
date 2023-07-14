@@ -57,9 +57,9 @@
 										<span>Remember me</span>
 									</label>
 								</div>
-								<button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
+								<button type="submit" class="btn btn-primary btn-lg btn-block"><i class="fa fa-lock"></i> LOGIN</button>
 								<div class="bottom">
-									<span class="helper-text"><i class="fa fa-lock"></i> <a href="register.php">Not A Member? </a></span>
+									<span class="helper-text">Don't have an account? <a href="register.php">Sign up</a></span>
 								</div>
 							</form>
 						</div>
@@ -68,7 +68,6 @@
 						<div class="overlay"></div>
 						<div class="content text">
 							<h1 class="heading">WELCOME TO BLOOD BANK SYSTEM</h1>
-							<p>Designed courtesy of Janja Programmers</p>
 						</div>
 					</div>
 					<div class="clearfix"></div>
