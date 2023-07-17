@@ -66,7 +66,8 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-primary" name="addmember">Add</button>
+							<button type="submit" class="btn btn-primary" name="addmember" onclick="incrementAndSaveValue()">Add</button>
+
 						</div>
 						</form>
 					</div>
@@ -85,7 +86,7 @@
 						<div class="metric">
 							<span class="icon"><i class="fa fa-clock-o"></i></span>
 							<p>
-								<span class="number">0</span>
+								<span class="number" id="counter">0</span>
 								<span class="title">Pending Requests</span>
 							</p>
 						</div>
@@ -134,3 +135,22 @@
 <?php
 	include('user_footer.php');
 ?>
+<script>
+  function incrementAndSaveValue() {
+    var currentValue = parseInt(document.getElementById("counter").innerText);
+    var newValue = currentValue + 1;
+    document.getElementById("counter").innerText = newValue;
+
+    // Save the incremented value to local storage
+    localStorage.setItem("counterValue", newValue);
+  }
+
+  // When the page loads, retrieve the value from local storage and update the counter
+  window.addEventListener("load", function () {
+    var valueFromLocalStorage = localStorage.getItem("counterValue");
+    if (valueFromLocalStorage !== null) {
+      document.getElementById("counter").innerText = valueFromLocalStorage;
+    }
+  });
+</script>
+
