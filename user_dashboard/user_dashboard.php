@@ -68,15 +68,6 @@
 							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 							<button type="submit" class="btn btn-primary" name="addmember">Add</button>
 						</div>
-						<?php
-							$status = $_GET['status'] ?? '';
-
-							if ($status === 'success') {
-								echo '<script>alert("Request sent successfully!");</script>';
-							} elseif ($status === 'error') {
-								echo '<script>alert("Error occurred while requesting to donate blood.");</script>';
-							}
-						?>
 						</form>
 					</div>
 				</div>
@@ -92,19 +83,19 @@
 				<div class="row">
 					<div class="col-md-3">
 						<div class="metric">
-							<span class="icon"><i class="fa fa-star"></i></span>
+							<span class="icon"><i class="fa fa-clock-o"></i></span>
 							<p>
 								<span class="number">0</span>
-								<span class="title">Reviews</span>
+								<span class="title">Pending Requests</span>
 							</p>
 						</div>
 					</div>
 					<div class="col-md-3">
 						<div class="metric">
-							<span class="icon"><i class="fa fa-gift"></i></span>
+							<span class="icon"><i class="fa fa-check-circle"></i></span>
 							<p>
 								<span class="number">0</span>
-								<span class="title">Rewards</span>
+								<span class="title">Approved Requests</span>
 							</p>
 						</div>
 					</div>
@@ -137,12 +128,7 @@
 </div>
 <!-- END MAIN -->
 <div class="clearfix"></div>
-<footer>
-	<div class="container-fluid">
-		<p class="copyright">&copy; 2018 Brought To You By <a href="http://code-projects.org/" target="_blank">Code-Projects</a>.
-		</p>
-	</div>
-</footer>
+
 </div>
 
 <?php
