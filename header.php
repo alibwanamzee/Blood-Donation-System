@@ -80,7 +80,7 @@
 						<li><a href="members.php" class=""><i class="lnr lnr-cog"></i> <span>Users</span></a></li>
 						<li><a href="pending_donors.php" class=""><i class="lnr lnr-alarm"></i> <span>Pending Donors</span></a></li>
 						<li><a href="approved_donors.php" class=""><i class="lnr lnr-alarm"></i> <span>Approved Donors</span></a></li>
-						<li><a href="active_donors.php" class=""><i class="lnr lnr-alarm"></i> <span>Active Donors</span></a><li>					
+						<li><a href="active_donors.php" class=""><i class="lnr lnr-alarm"></i> <span>List Of Donors</span></a><li>					
 					</ul>
 				</nav>
 			</div>

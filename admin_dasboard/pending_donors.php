@@ -131,7 +131,7 @@
           </div>
           
           <div class="form-group">
-            <input type="text" class="form-control" name="datepicker" id="datepicker" placeholder="Enter dob"></input>
+            <input type="text" class="form-control" name="datepicker" id="datepicker" placeholder="Enter Registration Date"></input>
           </div>
 
           <div class="form-group">
