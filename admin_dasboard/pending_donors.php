@@ -55,7 +55,7 @@
         </td>
          
       	</tr>
-      	 <!-- delete city modal -->
+      	 <!-- delete donor modal -->
       	<div class="modal fade" id="deletdonor<?php echo $row['donor_id']?>" role="dialog">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
@@ -73,7 +73,7 @@
       </div>
     </div>
   </div>
-  <!-- end of delete state modal -->
+  <!-- end of delete donor modal -->
   <!-- active modal -->
   <div class="modal fade" id="active<?php echo $row['donor_id']?>" role="dialog">
     <div class="modal-dialog modal-sm">

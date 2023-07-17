@@ -11,13 +11,6 @@
 <script>
   $(function() {
     $("#datepicker").datepicker();
-
-    // Click event for the "Send Alert" button
-    $(document).on("click", ".btn-primary", function() {
-      var $btn = $(this);
-      $btn.removeClass("btn-primary").addClass("btn-success").text("Alert Sent");
-      alert("Alert sent");
-    });
   });
 
   $(document).ready(function() {
@@ -56,6 +49,23 @@
               <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']; ?>" class="btn btn-primary">Send Alert</button>
             </td>
           </tr>
+          <div class="modal fade" id="deletdonor<?php echo $row['donor_id']?>" role="dialog">
+            <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Approve Donor</h4>
+              </div>
+              <div class="modal-body">
+                <p>Want to Send alert?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <a href="approve_donor.php?donor_id=<?php echo $row['donor_id'];?>"> <button type="button" class="btn btn-success">Send Alert</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
           <?php
           }
           ?>
