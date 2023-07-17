@@ -188,10 +188,6 @@
             <textarea type="text" class="form-control" name="address" id="address" placeholder="Enter Address"></textarea>
           </div>
           
-          <div class="form-group">
-            <input type="file" class="form-control" name="photo" id="photo" ></input>
-          </div>
-          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
