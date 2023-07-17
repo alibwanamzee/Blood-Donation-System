@@ -11,13 +11,20 @@
 <script>
   $(function() {
     $("#datepicker").datepicker();
+
+    // Click event for the "Send Alert" button
+    $(document).on("click", ".btn-primary", function() {
+      var $btn = $(this);
+      $btn.removeClass("btn-primary").addClass("btn-success").text("Alert Sent");
+      alert("Alert sent");
+    });
   });
-</script>
-<script type="text/javascript">
-	$(document).ready(function() {
+
+  $(document).ready(function() {
     $('#donors').DataTable();
   });
 </script>
+
 <div class="main">
   <!-- MAIN CONTENT -->
   <div class="main-content">
@@ -46,7 +53,7 @@
             <td><?php echo $row['phone']; ?></td>
             <td><?php echo $row['username_fk']; ?></td>
             <td>
-              <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']; ?>" class="btn btn-success">Send Alert</button>
+              <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']; ?>" class="btn btn-primary">Send Alert</button>
             </td>
           </tr>
           <?php
