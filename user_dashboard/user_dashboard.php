@@ -41,7 +41,7 @@
 									<input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone" required></input>
 								</div>
 								<div class="form-group">
-									<input type="email" class="form-control" name="email" id="email" placeholder="Enter email"></input>
+									<input type="email" class="form-control" name="email" id="email" placeholder="Enter email" required></input>
 								</div>
 								<div class="form-group">
 									<select class="form-control" name="state" id="state">

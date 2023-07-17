@@ -7,6 +7,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 
 <script>
   $(function() {
@@ -61,7 +62,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <a href="approved_donors.php"><button type="button" class="btn btn-success">Send Alert</button></a>
+                <a href="approved_donors.php"><button type="button" class="btn btn-success" onclick="sendEmail()">Send Alert</button></a>              
               </div>
             </div>
           </div>
@@ -78,3 +79,25 @@
 <?php
 	include('../footer.php');
 ?>
+
+<script>
+    function sendEmail() {
+      // Fetch the email address from the server
+      fetchEmail().then(email => {
+        Email.send({
+          SecureToken: "your_secure_token",
+          To: email,
+          From: "sender@example.com",
+          Subject: "CONFIRM EMAIL LOGIN",
+          Body: "You have been accepted in blood donation"
+        }).then(
+          message => alert("Email sent successfully")
+        );
+      });
+    }
+
+    function fetchEmail() {
+      return fetch("get_email.php")
+        .then(response => response.text());
+    }
+  </script>

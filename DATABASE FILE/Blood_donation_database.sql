@@ -133,7 +133,7 @@ CREATE TABLE `donor` (
   `gender` varchar(100) DEFAULT NULL,
   `datepicker` varchar(100) DEFAULT NULL,
   `body_weight` varchar(100) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NOT NULL,
   `blood_group`varchar(100) DEFAULT NULL,
   `state` varchar(100) DEFAULT NULL,
   `city` varchar(100) DEFAULT NULL,
