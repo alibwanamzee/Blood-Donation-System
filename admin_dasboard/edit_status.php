@@ -5,5 +5,5 @@
 	$status = $_POST['status'];
 
 	$edit = $connection->query("UPDATE donor SET status='$status' WHERE donor_id='$id'");
-	header('location:donor.php');
+	header('location:pending_donors.php');
 ?>
