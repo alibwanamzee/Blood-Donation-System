@@ -37,8 +37,8 @@
         </thead>
         <tbody>
           <?php
-          $members= $connection->query("SELECT * FROM donor WHERE status='1'");
-          while ($row = $members->fetch_array()) {
+            $members= $connection->query("SELECT * FROM donor WHERE pends='1'");
+            while($row = $members->fetch_array()) {
           ?>
           <tr>
             <td><?php echo $row['name']; ?></td>
@@ -61,7 +61,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <a href="approve_donor.php?donor_id=<?php echo $row['donor_id'];?>"> <button type="button" class="btn btn-success">Send Alert</button></a>
+                <a href="approved_donors.php"><button type="button" class="btn btn-success">Send Alert</button></a>
               </div>
             </div>
           </div>
