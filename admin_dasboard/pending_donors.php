@@ -121,10 +121,6 @@
           <div class="form-group">
             <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name"></input>
           </div>
-          
-          <div class="form-group">
-            <input type="text" class="form-control" name="fathername" id="fathername" placeholder="Enter fathername"></input>
-          </div>
 
           <div class="form-group">
             <select class="form-control" name="gender" id="gender" >
