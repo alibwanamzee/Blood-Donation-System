@@ -38,7 +38,7 @@
     </thead>
     <tbody>
       <?php
-      $members= $connection->query("SELECT * FROM donor");
+      $members= $connection->query("SELECT * FROM donor WHERE pends='0'");
       while($row = $members->fetch_array()) {
        ?>
 
@@ -84,7 +84,8 @@
         </div>
         <div class="modal-body">
           <p>Want to accept this request? ?</p>
-          <form action="edit_status.php?status_id=<?php echo $row['donor_id']?>" method="post">
+          <form action="edit_status.php?status_id=<?php echo $row['donor_id']?>&pends_id=0" method="post">
+
             <input type="hidden" name="status" value="1"></input>
         
         </div>

@@ -35,7 +35,7 @@
         </thead>
         <tbody>
           <?php
-          $members= $connection->query("SELECT * FROM donor WHERE status='1'");
+          $members= $connection->query("SELECT * FROM donor WHERE status='2'");
           while ($row = $members->fetch_array()) {
           ?>
           <tr>
