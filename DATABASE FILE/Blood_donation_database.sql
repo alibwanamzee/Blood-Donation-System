@@ -142,14 +142,15 @@ CREATE TABLE `donor` (
   `address` varchar(100) DEFAULT NULL,
   `username_fk` varchar(100) NOT NULL,
   `status` int(12) DEFAULT NULL,
+  `pends` int(12) DEFAULT 0,
   PRIMARY KEY (`donor_id`,`username_fk`),
   KEY `users` (`username_fk`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 /*Data for the table `donor` */
 
-insert  into `donor`(`donor_id`,`name`,`gender`,`datepicker`,`body_weight`,`email`,`blood_group`,`state`,`city`,`pincode`,`phone`,`address`,`username_fk`,`status`) values 
-(1,'Donor 1','male','','','donor@gmail.com','','Coast','Mombasa','','0700000000','','donor',1);
+insert  into `donor`(`donor_id`,`name`,`gender`,`datepicker`,`body_weight`,`email`,`blood_group`,`state`,`city`,`pincode`,`phone`,`address`,`username_fk`,`status`,`pends`) values 
+(1,'Donor 1','male','','','donor@gmail.com','','Coast','Mombasa','','0700000000','','donor',1,0);
 
 /*Table structure for table `email_subs` */
 
