@@ -1,8 +1,9 @@
 <?php
 	include('../connection.php');
 
-	$id = $_GET['donor_id'];
+	$id = $_GET['status_id'];
+	$status = $_POST['status'];
 
-	$delete = $connection->query("DELETE FROM donor WHERE donor_id='$id'");
+	$edit = $connection->query("UPDATE donor SET pends = 2, status='$status' WHERE donor_id='$id'");
 	header('location:approved_donors.php');
 ?>
