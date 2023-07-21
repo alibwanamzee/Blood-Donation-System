@@ -12,7 +12,6 @@ $city = $_POST['city'];
 $insert = $connection->query("INSERT INTO donor(name, gender, phone, email, state, city, username_fk, status) VALUES ('$name', '$gender', '$phone', '$email', '$state', '$city', '".$_SESSION['membername']."', '0')");
 
 if ($insert) {
-    // Increment the pending_request value in the stats table
     $incrementQuery = "UPDATE stats SET pending_req = pending_req + 1";
     $connection->query($incrementQuery);
 
