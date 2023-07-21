@@ -77,8 +77,8 @@
 			
 			<div class="panel panel-headline">
 				<div class="panel-heading">
-					<h3 class="panel-title">Weekly Overview</h3>
-					<p class="panel-subtitle">Period: Aug 20, 2023 - Aug 26, 2023</p>
+					<h3 class="panel-title">Overview</h3>
+					<p class="panel-subtitle">Period: July 04, 2023 - <?php $currentDate = date('F d, Y');echo $currentDate;?></p>
 				</div>
 				<div class="panel-body">
 				<div class="row">
@@ -86,7 +86,14 @@
 						<div class="metric">
 							<span class="icon"><i class="fa fa-clock-o"></i></span>
 							<p>
-								<span class="number">0</span>
+								<span class="number">
+								<?php
+									$pending_req= $connection->query("SELECT pending_req FROM stats");
+									while($row = $pending_req->fetch_array()) {
+										echo $row['pending_req'];	
+									}
+								?>
+								</span>
 								<span class="title">Pending Requests</span>
 							</p>
 						</div>
@@ -95,7 +102,14 @@
 						<div class="metric">
 							<span class="icon"><i class="fa fa-check-circle"></i></span>
 							<p>
-								<span class="number">0</span>
+								<span class="number">
+								<?php
+									$approved_req= $connection->query("SELECT COUNT(*) AS approved_req FROM stats");
+									while($row = $approved_req->fetch_array()) {
+										echo $row['approved_req'];	
+									}
+								?>
+								</span>
 								<span class="title">Approved Requests</span>
 							</p>
 						</div>
@@ -104,7 +118,14 @@
 						<div class="metric">
 							<span class="icon"><i class="fa fa-eye"></i></span>
 							<p>
-								<span class="number">0</span>
+								<span class="number">
+								<?php
+									$visits= $connection->query("SELECT COUNT(*) AS visits FROM stats");
+									while($row = $visits->fetch_array()) {
+										echo $row['visits'];	
+									}
+								?>
+								</span>
 								<span class="title">Visits</span>
 							</p>
 						</div>

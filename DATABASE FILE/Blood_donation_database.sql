@@ -209,6 +209,22 @@ insert  into `state`(`state_id`,`state_code`,`state_name`,`description`) values
 (1,'Cst','Coast','Province'),
 (2,'Ctr','Central','Province');
 
+/*Table structure for table `pending` */
+
+DROP TABLE IF EXISTS `stats`;
+
+CREATE TABLE `stats` (
+  `donor_id` int(100) NOT NULL AUTO_INCREMENT,
+  `pending_req` int(100) NOT NULL,
+  `approved_req` int(100) NOT NULL,
+  `visits` int(100) NOT NULL,
+  CONSTRAINT `fk_donor_id` FOREIGN KEY (`donor_id`) REFERENCES `donor` (`donor_id`) ON UPDATE CASCADE
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*Data for the table `state` */
+
+insert  into `stats` values 
+(1,0,0,0);
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
