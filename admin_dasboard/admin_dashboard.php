@@ -18,7 +18,7 @@
 						<div class="row">
 							<div class="col-md-4">
 								<div class="metric">
-									<span class="icon"><i class="fa fa-map"></i></span>
+									<span class="icon"><i class="fa fa-globe"></i></span>
 									<p>
 										<span class="number">
 											<?php
@@ -33,7 +33,7 @@
 							</div>
 							<div class="col-md-4">
 								<div class="metric">
-									<span class="icon"><i class="fa fa-home"></i></span>
+									<span class="icon"><i class="fa fa-building"></i></span>
 									<p>
 										<span class="number">
 										<?php
@@ -49,7 +49,7 @@
 							</div>
 							<div class="col-md-4">
 								<div class="metric">
-									<span class="icon"><i class="fa fa-user-md"></i></span>
+									<span class="icon"><i class="fa fa-users"></i></span>
 									<p>
 										<span class="number">
 										<?php
