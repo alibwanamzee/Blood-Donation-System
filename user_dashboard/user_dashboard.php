@@ -37,7 +37,7 @@
 										<option value="other">Male</option>
 									</select>
 								</div>
-								<div class="form-group">
+					<div class="form-group">
 									<input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone" required></input>
 								</div>
 								<div class="form-group">
@@ -63,13 +63,13 @@
 										?>
 									</select>
 								</div>					
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-									<button type="submit" class="btn btn-primary" name="addmember">Add</button>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<button type="submit" class="btn btn-primary" name="addmember">Add</button>
 
-								</div>
-							</form>
+						</div>
+						</form>
 					</div>
 				</div>
 			</div>

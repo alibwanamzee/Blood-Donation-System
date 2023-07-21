@@ -214,11 +214,11 @@ insert  into `state`(`state_id`,`state_code`,`state_name`,`description`) values
 DROP TABLE IF EXISTS `stats`;
 
 CREATE TABLE `stats` (
-  `donor_id` int(100) NOT NULL AUTO_INCREMENT,
+  `member_id` int(100) NOT NULL AUTO_INCREMENT,
   `pending_req` int(100) NOT NULL,
   `approved_req` int(100) NOT NULL,
   `visits` int(100) NOT NULL,
-  CONSTRAINT `fk_donor_id` FOREIGN KEY (`donor_id`) REFERENCES `donor` (`donor_id`) ON UPDATE CASCADE
+  CONSTRAINT `fk_member_id` FOREIGN KEY (`member_id`) REFERENCES `user` (`member_id`) ON UPDATE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*Data for the table `state` */
 
