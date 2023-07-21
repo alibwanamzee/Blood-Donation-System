@@ -83,12 +83,10 @@
           <h4 class="modal-title">Are you sure ?</h4>
         </div>
         <div class="modal-body">
-          <p>Want to accept this request? ?</p>
-          <form action="edit_status.php?status_id=<?php echo $row['donor_id']?>" method="post">
-
-            <input type="hidden" name="status" value="1"></input>
-        
+          <p>Want to accept this request?</p>      
         </div>
+        <form action="edit_status.php?status_id=<?php echo $row['donor_id']?>" method="post">
+        
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
          <button type="submit" class="btn btn-success">Accept</button>

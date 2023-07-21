@@ -60,10 +60,13 @@
               <div class="modal-body">
                 <p>Want to Send alert?</p>
               </div>
+              <form action="approve_donor.php?status_id=<?php echo $row['donor_id']?>" method="post">
+        
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <a href="approved_donors.php"><button type="button" class="btn btn-success" onclick="sendEmail()">Send Alert</button></a>              
+              <button type="submit" class="btn btn-success">Send Alert</button>
               </div>
+              </form>
             </div>
           </div>
         </div>
