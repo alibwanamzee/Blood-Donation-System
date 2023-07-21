@@ -150,7 +150,7 @@ CREATE TABLE `donor` (
 /*Data for the table `donor` */
 
 insert  into `donor`(`donor_id`,`name`,`gender`,`datepicker`,`body_weight`,`email`,`blood_group`,`state`,`city`,`pincode`,`phone`,`address`,`username_fk`,`status`,`pends`) values 
-(1,'Donor 1','male','2023-07-21','60','donor@gmail.com','O+','Coast','Mombasa','80100','0700000000','','donor',1,0);
+(1,'Donor 1','male','2023-07-21','60','donor@gmail.com','O+','Coast','Mombasa','80100','0700000000','','donor',0,0);
 
 /*Table structure for table `email_subs` */
 
