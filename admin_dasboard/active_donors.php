@@ -35,8 +35,8 @@
         </thead>
         <tbody>
           <?php
-          $members= $connection->query("SELECT * FROM donor WHERE pends='1'");
-          while ($row = $members->fetch_array()) {
+          $members= $connection->query("SELECT * FROM donor WHERE pends='2'");
+          while($row = $members->fetch_array()) {
           ?>
           <tr>
             <td><?php echo $row['name']; ?></td>
