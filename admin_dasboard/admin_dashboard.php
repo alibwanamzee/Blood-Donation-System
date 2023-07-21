@@ -20,8 +20,14 @@
 								<div class="metric">
 									<span class="icon"><i class="fa fa-map"></i></span>
 									<p>
-										<span class="title">0</span>
-										<span class="number">States</span>
+										<span class="number">
+											<?php
+												$num_states= $connection->query("SELECT COUNT(*) AS num_states FROM state");
+												while($row = $num_states->fetch_array()) {
+												 echo $row['num_states'];	
+												}
+											?></span>
+										<span class="title">States</span>
 									</p>
 								</div>
 							</div>
@@ -29,8 +35,15 @@
 								<div class="metric">
 									<span class="icon"><i class="fa fa-home"></i></span>
 									<p>
-										<span class="title">0</span>
-										<span class="number">Cities</span>
+										<span class="number">
+										<?php
+											$num_cities= $connection->query("SELECT COUNT(*) AS num_cities FROM city");
+											while($row = $num_cities->fetch_array()) {
+												echo $row['num_cities'];	
+											}
+										?>
+										</span>
+										<span class="title">Cities</span>
 									</p>
 								</div>
 							</div>
@@ -38,8 +51,15 @@
 								<div class="metric">
 									<span class="icon"><i class="fa fa-user-md"></i></span>
 									<p>
-										<span class="title">0</span>
-										<span class="number">Users</span>
+										<span class="number">
+										<?php
+												$num_users= $connection->query("SELECT COUNT(*) AS num_users FROM users");
+												while($row = $num_users->fetch_array()) {
+												 echo $row['num_users'];	
+												}
+											?>
+										</span>
+										<span class="title">Users</span>
 									</p>
 								</div>
 							</div>
