@@ -15,14 +15,10 @@
 			$_SESSION['username'] = $fetch['username'];
 			header('location:admin_dasboard/admin_dashboard.php');
 
-		} elseif($fetch['usertype'] == 'phlebotomists') {
-			$_SESSION['member_id'] = $fetch['member_id'];
-			$_SESSION['username'] = $fetch['username'];
-			header('location:dashboard/dashboard.php');
-
 		} elseif ($fetch['usertype'] == 'donor')  {
 			$_SESSION['userid'] = $fetch['user_id'];
 			$_SESSION['membername'] = $fetch['username'];
+			$_SESSION['id'] = $fetch['member_id'];
 			header('location:user_dashboard/user_dashboard.php');
 		} 
 	} else {

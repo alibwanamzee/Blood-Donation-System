@@ -89,9 +89,9 @@
 								<span class="number">
 								<?php
 									$pending_req= $connection->query("SELECT pending_req FROM stats");
-									while($row = $pending_req->fetch_array()) {
-										echo $row['pending_req'];	
-									}
+									$row = $pending_req->fetch_array();
+									echo $row['pending_req'];	
+									
 								?>
 								</span>
 								<span class="title">Pending Requests</span>
@@ -105,9 +105,9 @@
 								<span class="number">
 								<?php
 									$approved_req= $connection->query("SELECT approved_req FROM stats");
-									while($row = $approved_req->fetch_array()) {
-										echo $row['approved_req'];	
-									}
+									$row = $approved_req->fetch_array();
+									echo $row['approved_req'];	
+									
 								?>
 								</span>
 								<span class="title">Approved Requests</span>
@@ -121,9 +121,8 @@
 								<span class="number">
 								<?php
 									$visits= $connection->query("SELECT visits FROM stats");
-									while($row = $visits->fetch_array()) {
-										echo $row['visits'];	
-									}
+									$row = $visits->fetch_array();
+									echo $row['visits'];	
 								?>
 								</span>
 								<span class="title">Visits</span>

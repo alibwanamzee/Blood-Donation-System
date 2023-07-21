@@ -188,8 +188,7 @@ CREATE TABLE `users` (
 
 insert  into `users`(`member_id`,`name`,`username`,`password`,`email`,`phone`,`address`,`usertype`,`profile`) values 
 (1,'Admin','admin','admin',NULL,NULL,NULL,'admin','upload/3_1521639658.jpg'),
-(2,'Phlebotomist','phlebotomist','1234',NULL,NULL,NULL,'phlebotomist','upload/7015951-3d-funny-animal_1521603987.jpg'),
-(14,'Donor','donor','donor',NULL,NULL,NULL,'donor','upload/vehicle_1521645370.png');
+(2,'Donor','donor','donor',NULL,NULL,NULL,'donor','upload/vehicle_1521645370.png');
 
 /*Table structure for table `state` */
 
@@ -210,7 +209,6 @@ insert  into `state`(`state_id`,`state_code`,`state_name`,`description`) values
 (2,'Ctr','Central','Province');
 
 /*Table structure for table `pending` */
-
 DROP TABLE IF EXISTS `stats`;
 
 CREATE TABLE `stats` (
@@ -219,11 +217,10 @@ CREATE TABLE `stats` (
   `approved_req` int(100) NOT NULL,
   `visits` int(100) NOT NULL,
   CONSTRAINT `fk_member_id` FOREIGN KEY (`member_id`) REFERENCES `users` (`member_id`) ON UPDATE CASCADE
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*Data for the table `state` */
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-insert  into `stats` values 
-(1,0,0,0);
+INSERT INTO `stats` (member_id, pending_req, approved_req, visits)
+VALUES (2,0,0,0);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
