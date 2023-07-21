@@ -104,7 +104,7 @@
 							<p>
 								<span class="number">
 								<?php
-									$approved_req= $connection->query("SELECT COUNT(*) AS approved_req FROM stats");
+									$approved_req= $connection->query("SELECT approved_req FROM stats");
 									while($row = $approved_req->fetch_array()) {
 										echo $row['approved_req'];	
 									}
@@ -120,7 +120,7 @@
 							<p>
 								<span class="number">
 								<?php
-									$visits= $connection->query("SELECT COUNT(*) AS visits FROM stats");
+									$visits= $connection->query("SELECT visits FROM stats");
 									while($row = $visits->fetch_array()) {
 										echo $row['visits'];	
 									}
