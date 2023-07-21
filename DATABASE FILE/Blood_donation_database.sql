@@ -133,8 +133,8 @@ CREATE TABLE `donor` (
   `gender` varchar(100) DEFAULT NULL,
   `datepicker` varchar(100) DEFAULT NULL,
   `body_weight` varchar(100) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NOT NULL,
-  `blood_group`varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `blood_group` varchar(100) DEFAULT NULL,
   `state` varchar(100) DEFAULT NULL,
   `city` varchar(100) DEFAULT NULL,
   `pincode` varchar(100) DEFAULT NULL,
@@ -150,7 +150,7 @@ CREATE TABLE `donor` (
 /*Data for the table `donor` */
 
 insert  into `donor`(`donor_id`,`name`,`gender`,`datepicker`,`body_weight`,`email`,`blood_group`,`state`,`city`,`pincode`,`phone`,`address`,`username_fk`,`status`,`pends`) values 
-(1,'Donor 1','male','','','donor@gmail.com','','Coast','Mombasa','','0700000000','','donor',1,0);
+(1,'Donor 1','male','2023-07-21','60','donor@gmail.com','O+','Coast','Mombasa','80100','0700000000','','donor',1,0);
 
 /*Table structure for table `email_subs` */
 
