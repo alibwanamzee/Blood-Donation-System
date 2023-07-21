@@ -75,12 +75,12 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="admin_dashboard.php" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						<li><a href="state.php" class=""><i class="lnr lnr-code"></i> <span>State</span></a></li>
-						<li><a href="city.php" class=""><i class="lnr lnr-chart-bars"></i> <span>City</span></a></li>
-						<li><a href="members.php" class=""><i class="lnr lnr-cog"></i> <span>Users</span></a></li>
-						<li><a href="pending_donors.php" class=""><i class="lnr lnr-alarm"></i> <span>Pending Donors</span></a></li>
-						<li><a href="approved_donors.php" class=""><i class="lnr lnr-alarm"></i> <span>Approved Donors</span></a></li>
-						<li><a href="active_donors.php" class=""><i class="lnr lnr-alarm"></i> <span>List Of Donors</span></a><li>					
+						<li><a href="state.php" class=""><i class="fa fa-globe"></i> <span>State</span></a></li>
+						<li><a href="city.php" class=""><i class="fa fa-building"></i> <span>City</span></a></li>
+						<li><a href="members.php" class=""><i class="fa fa-users"></i> <span>Users</span></a></li>
+						<li><a href="pending_donors.php" class=""><i class="fa fa-clock-o"></i> <span>Pending Donors</span></a></li>
+						<li><a href="approved_donors.php" class=""><i class="fa fa-check-circle"></i> <span>Approved Donors</span></a></li>
+						<li><a href="active_donors.php" class=""><i class="fa fa-heart"></i> <span>List Of Donors</span></a><li>					
 					</ul>
 				</nav>
 			</div>
