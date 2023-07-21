@@ -218,7 +218,7 @@ CREATE TABLE `stats` (
   `pending_req` int(100) NOT NULL,
   `approved_req` int(100) NOT NULL,
   `visits` int(100) NOT NULL,
-  CONSTRAINT `fk_member_id` FOREIGN KEY (`member_id`) REFERENCES `user` (`member_id`) ON UPDATE CASCADE
+  CONSTRAINT `fk_member_id` FOREIGN KEY (`member_id`) REFERENCES `users` (`member_id`) ON UPDATE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*Data for the table `state` */
 
