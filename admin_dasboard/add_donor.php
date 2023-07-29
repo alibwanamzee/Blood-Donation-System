@@ -2,12 +2,11 @@
 include('../connection.php');
 session_start();
 
-$num = 21;
 $datepicker = $_POST['datepicker'];
 $weight = $_POST['weight'];
 $blood = $_POST['blood'];
 
-$donor_id = $num++; 
+$donor_id = 22; 
 
 $stmt = $connection->prepare("UPDATE donor SET pends = 2, datepicker = ?, body_weight = ?, blood_group = ? WHERE donor_id = ?");
 
