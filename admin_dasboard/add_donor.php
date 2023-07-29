@@ -15,7 +15,7 @@
 	$address = $_POST['address'];
 
 
-	$insert = $connection->query("INSERT INTO donor(name, gender, datepicker, body_weight, email, blood_group, state, city, pincode, phone, address, username_fk, status, pends) VALUES ('$name', '$gender', '$datepicker', '$weight', '$email', '$blood', '$state', '$city', '$pincode', '$phone', '$address', '".$_SESSION['username']."', '0', '0')");
+	$update = $connection->query("UPDATE donor SET pends=2");
 
 	
 	if($insert){
