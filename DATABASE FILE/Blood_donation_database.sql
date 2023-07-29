@@ -12,7 +12,8 @@ MySQL - 5.6.17 : Database - Blood_donation_database
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`Blood_donation_database` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `Blood_donation_database` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
 USE `Blood_donation_database`;
 
@@ -62,9 +63,9 @@ CREATE TABLE `blood_group` (
 
 /*Data for the table `blood_group` */
 
-insert  into `blood_group`(`blood_id`,`blood_group`) values 
-(3,'sd'),
-(5,'D#');
+INSERT INTO `blood_group` (`blood_id`, `blood_group`) VALUES 
+(3, 'sd'),
+(5, 'D#');
 
 /*Table structure for table `blood_request_group` */
 
@@ -100,9 +101,9 @@ CREATE TABLE `city` (
 
 /*Data for the table `city` */
 
-insert  into `city`(`city_id`,`city_code`,`city_name`,`description`,`donor_fk`,`state_fk`) values 
-(1,'Msa','Mombasa','City',NULL,1),
-(2,'Nrb','Nairobi','City',NULL,2);
+INSERT INTO `city` (`city_id`, `city_code`, `city_name`, `description`, `donor_fk`, `state_fk`) VALUES 
+(1, 'Msa', 'Mombasa', 'City', NULL, 1),
+(2, 'Nrb', 'Nairobi', 'City', NULL, 2);
 
 /*Table structure for table `contact` */
 
@@ -149,8 +150,8 @@ CREATE TABLE `donor` (
 
 /*Data for the table `donor` */
 
-insert  into `donor`(`donor_id`,`name`,`gender`,`datepicker`,`body_weight`,`email`,`blood_group`,`state`,`city`,`pincode`,`phone`,`address`,`username_fk`,`status`,`pends`) values 
-(1,'Donor 1','male','2023-07-21','60','donor@gmail.com','O+','Coast','Mombasa','80100','0700000000','','donor',0,0);
+INSERT INTO `donor` (`donor_id`, `name`, `gender`, `datepicker`, `body_weight`, `email`, `blood_group`, `state`, `city`, `pincode`, `phone`, `address`, `username_fk`, `status`, `pends`) VALUES 
+(1, 'Donor 1', 'male', '2023-07-21', '60', 'donor@gmail.com', 'O+', 'Coast', 'Mombasa', '80100', '0700000000', '', 'donor', 0, 0);
 
 /*Table structure for table `email_subs` */
 
@@ -186,9 +187,9 @@ CREATE TABLE `users` (
 
 /*Data for the table `users` */
 
-insert  into `users`(`member_id`,`name`,`username`,`password`,`email`,`phone`,`address`,`usertype`,`profile`) values 
-(1,'Admin','admin','admin',NULL,NULL,NULL,'admin','upload/3_1521639658.jpg'),
-(2,'Donor','donor','donor',NULL,NULL,NULL,'donor','upload/vehicle_1521645370.png');
+INSERT INTO `users` (`member_id`, `name`, `username`, `password`, `email`, `phone`, `address`, `usertype`, `profile`) VALUES 
+(1, 'Admin', 'admin', 'admin', NULL, NULL, NULL, 'admin', 'upload/3_1521639658.jpg'),
+(2, 'Donor', 'donor', 'donor', NULL, NULL, NULL, 'donor', 'upload/vehicle_1521645370.png');
 
 /*Table structure for table `state` */
 
@@ -204,26 +205,28 @@ CREATE TABLE `state` (
 
 /*Data for the table `state` */
 
-insert  into `state`(`state_id`,`state_code`,`state_name`,`description`) values 
-(1,'Cst','Coast','Province'),
-(2,'Ctr','Central','Province');
+INSERT INTO `state` (`state_id`, `state_code`, `state_name`, `description`) VALUES 
+(1, 'Cst', 'Coast', 'Province'),
+(2, 'Ctr', 'Central', 'Province');
 
-/*Table structure for table `pending` */
+/*Table structure for table `stats` */
+
 DROP TABLE IF EXISTS `stats`;
 
 CREATE TABLE `stats` (
-  `member_id` int(100) NOT NULL AUTO_INCREMENT,
+  `stats_id` int(100) NOT NULL AUTO_INCREMENT,
   `pending_req` int(100) NOT NULL,
   `approved_req` int(100) NOT NULL,
   `visits` int(100) NOT NULL,
-  CONSTRAINT `fk_member_id` FOREIGN KEY (`member_id`) REFERENCES `users` (`member_id`) ON UPDATE CASCADE
+  `member_id` int(100) NOT NULL,
+  CONSTRAINT `fk_member_id` FOREIGN KEY (`member_id`) REFERENCES `users` (`member_id`) ON UPDATE CASCADE,
+  PRIMARY KEY (`stats_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `stats` (member_id, pending_req, approved_req, visits)
-VALUES (2,0,0,0);
+INSERT INTO `stats` (`pending_req`, `approved_req`, `visits`, `member_id`)
+VALUES (0, 0, 0, 2);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
