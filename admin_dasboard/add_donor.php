@@ -1,26 +1,25 @@
 <?php
-	include('../connection.php');
-	session_start();
+include('../connection.php');
+session_start();
 
-	$name = $_POST['name'];
-	$gender = $_POST['gender'];
-	$datepicker = $_POST['datepicker'];
-	$weight = $_POST['weight'];
-	$email = $_POST['email'];
-	$blood = $_POST['blood'];
-	$state = $_POST['state'];
-	$city = $_POST['city'];
-	$pincode = $_POST['pincode'];
-	$phone = $_POST['phone'];
-	$address = $_POST['address'];
+$num = 21;
+$datepicker = $_POST['datepicker'];
+$weight = $_POST['weight'];
+$blood = $_POST['blood'];
+
+$donor_id = $num++; 
+
+$stmt = $connection->prepare("UPDATE donor SET pends = 2, datepicker = ?, body_weight = ?, blood_group = ? WHERE donor_id = ?");
+
+$stmt->bind_param("sssi", $datepicker, $weight, $blood, $donor_id);
 
 
-	$update = $connection->query("UPDATE donor SET pends=2");
+if ($stmt->execute()) {
+  header('location:approved_donors.php');
+} else {
 
-	
-	if($insert){
-		header('location:approved_donors.php');
-	}else {
-		header('location:approved_donors.php');
-	}
+  header('location:approved_donors.php');
+}
+
+$stmt->close();
 ?>
