@@ -146,11 +146,6 @@ CREATE TABLE `donor` (
   KEY `users` (`username_fk`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
-/*Data for the table `donor` */
-
-INSERT INTO `donor` (`donor_id`, `name`, `gender`, `datepicker`, `body_weight`, `email`, `blood_group`, `state`, `city`, `phone`,`username_fk`, `status`, `pends`) VALUES 
-(1, 'Donor 1', 'male', '', '', 'donor@gmail.com', '', 'Coast', 'Mombasa', '0700000000', 'donor', 0, 0);
-
 /*Table structure for table `email_subs` */
 
 DROP TABLE IF EXISTS `email_subs`;
