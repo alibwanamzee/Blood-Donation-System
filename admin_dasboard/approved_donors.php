@@ -75,6 +75,18 @@
             <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name"></input>
           </div>
 
+          <!--TODO
+        
+            FETCH  
+            full name
+            gender
+            phone
+            email
+            coast
+            mombasa
+          -->
+        
+
           <div class="form-group">
             <select class="form-control" name="gender" id="gender" >
               <option value="male">Male</option>
@@ -128,11 +140,6 @@
             ?>
              
             </select>
-          </div>
-
-
-          <div class="form-group">
-            <input type="text" class="form-control" name="pincode" id="pincode" placeholder="Enter pincode"></input>
           </div>
           <div class="form-group">
             <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone"></input>
