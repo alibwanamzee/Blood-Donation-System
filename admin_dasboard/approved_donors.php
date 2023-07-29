@@ -47,7 +47,8 @@
             <td><?php echo $row['phone']; ?></td>
             <td><?php echo $row['username_fk']; ?></td>
             <td>
-              <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']; ?>" class="btn btn-primary">Send Alert</button>
+              <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']; ?>" class="btn btn-info">Send Alert</button>
+              <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']; ?>" class="btn btn-success">Donate</button>
             </td>
           </tr>
           <div class="modal fade" id="deletdonor<?php echo $row['donor_id']?>" role="dialog">
