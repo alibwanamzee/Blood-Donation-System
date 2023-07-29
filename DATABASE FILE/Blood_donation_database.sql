@@ -171,7 +171,6 @@ CREATE TABLE `users` (
   `username` varchar(100) NOT NULL,
   `password` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `phone` int(20) DEFAULT NULL,
   `usertype` varchar(100) DEFAULT NULL,
   `profile` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`member_id`,`username`)
@@ -179,9 +178,9 @@ CREATE TABLE `users` (
 
 /*Data for the table `users` */
 
-INSERT INTO `users` (`member_id`, `name`, `username`, `password`, `email`, `phone`, `usertype`, `profile`) VALUES 
-(1, 'Admin', 'admin', 'admin', 'admin@email.com', '25400000000', 'admin', 'upload/3_1521639658.jpg'),
-(2, 'Donor', 'donor', 'donor', 'donor@email.com', '25411111111', 'donor', 'upload/vehicle_1521645370.png');
+INSERT INTO `users` (`member_id`, `name`, `username`, `password`, `email`, `usertype`, `profile`) VALUES 
+(1, 'Admin', 'admin', 'admin', 'admin@email.com', 'admin', 'upload/3_1521639658.jpg'),
+(2, 'Donor', 'donor', 'donor', 'donor@email.com', 'donor', 'upload/vehicle_1521645370.png');
 
 /*Table structure for table `state` */
 
