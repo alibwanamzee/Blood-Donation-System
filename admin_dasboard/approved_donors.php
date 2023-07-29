@@ -48,7 +48,7 @@
             <td><?php echo $row['username_fk']; ?></td>
             <td>
               <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']; ?>" class="btn btn-info">Send Alert</button>
-              <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']; ?>" class="btn btn-success">Donate</button>
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#adddonor">Donate</button>
             </td>
           </tr>
           <div class="modal fade" id="deletdonor<?php echo $row['donor_id']?>" role="dialog">
@@ -79,7 +79,98 @@
     </div>
   </div>
 </div>
+<!-- add donor modal -->
+<div class="modal fade" id="adddonor" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add Donor Details</h4>
+        </div>
+        <div class="modal-body">
+        <form action="add_donor.php" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name"></input>
+          </div>
 
+          <div class="form-group">
+            <select class="form-control" name="gender" id="gender" >
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+               <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <input type="text" class="form-control" name="datepicker" id="datepicker" placeholder="Enter Registration Date"></input>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="weight" id="weight" placeholder="Enter weight"></input>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter email" required></input>
+          </div>
+          <div class="form-group">
+            <select class="form-control" name="blood" id="blood" >
+            <option value="A+">A+</option>
+            <option value="B+">B+</option>
+            <option value="O+">O+</option>
+            <option value="AB+">AB+</option>
+
+             
+            </select>
+          </div>
+
+           <div class="form-group">
+            <select class="form-control" name="state" id="state" >
+            <?php 
+            $state = $connection->query("SELECT * FROM state");
+            while($row = $state->fetch_array()){ ?>
+             <option value="<?php echo $row['state_name'];?>"><?php echo $row['state_name'];?></option>
+            
+            <?php }
+            ?>
+             
+            </select>
+          </div>
+
+          <div class="form-group">
+            <select class="form-control" name="city" id="city" >
+            <?php 
+            $state = $connection->query("SELECT * FROM city");
+            while($row = $state->fetch_array()){ ?>
+             <option value="<?php echo $row['city_name'];?>"><?php echo $row['city_name'];?></option>
+            
+            <?php }
+            ?>
+             
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <input type="text" class="form-control" name="pincode" id="pincode" placeholder="Enter pincode"></input>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone"></input>
+          </div>
+          <div class="form-group">
+            <textarea type="text" class="form-control" name="address" id="address" placeholder="Enter Address"></textarea>
+          </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" name="addmember">Add</button>
+        </div>
+        </form>
+      </div>
+      
+    </div>
+</div>
 <?php
 	include('../footer.php');
 ?>
