@@ -19,8 +19,8 @@
 
 	
 	if($insert){
-		header('location:pending_donors.php');
+		header('location:approved_donors.php');
 	}else {
-		header('location:pending_donors.php');
+		header('location:approved_donors.php');
 	}
 ?>
