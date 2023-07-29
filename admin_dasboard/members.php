@@ -15,7 +15,7 @@
 				<div class="container-fluid">
 
   <h2>Welcome,  <span style="color: blue"> <?php echo $_SESSION['username']?></span><br />Manage Users</h2> <br />
-  <p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addmember">Add new</button></p> <br />           
+           
   <table class="table table-bordered" id="members">
     <thead>
       <tr>
@@ -116,60 +116,6 @@
 	</div>
 </div>
 
-<!-- add state modal -->
-<div class="modal fade" id="addmember" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add Members</h4>
-        </div>
-        <div class="modal-body">
-
-        <form action="add_member.php" method="post" enctype="multipart/form-data">
-          <div class="form-group">
-          	<input type="text" class="form-control" name="name" id="name" placeholder="Enter Name"></input>
-          </div>
-          
-          <div class="form-group">
-            <input type="text" class="form-control" name="username" id="username" placeholder="Enter username"></input>
-          </div>
-
-          <div class="form-group">
-            <input type="password" class="form-control" name="password" id="password" placeholder="Enter password"></input>
-          </div>
-          
-          <div class="form-group">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Enter email"></input>
-          </div>
-
-          <div class="form-group">
-            <input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone"></input>
-          </div>
-          <div class="form-group">
-            <textarea type="text" class="form-control" name="address" id="address" placeholder="Enter Address"></textarea>
-          </div>
-          
-          <div class="form-group">
-            <input type="file" class="form-control" name="photo" id="photo" ></input>
-          </div>
-
-          <div class="form-group">
-          	<input type="text" class="form-control" name="user_type" id="user_type" placeholder="Enter User Type"></input>
-          </div>  
-          
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary" name="addmember">Add</button>
-        </div>
-        </form>
-      </div>
-      
-    </div>
-  </div>
 <?php
 	include('../footer.php');
 ?>
