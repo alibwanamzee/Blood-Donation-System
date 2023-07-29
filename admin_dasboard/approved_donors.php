@@ -32,20 +32,20 @@
             <th>Name</th>
             <th>Gender</th>
             <th>Phone</th>
-            <th>By</th>
+            <th>City</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
           <?php
-            $members= $connection->query("SELECT * FROM donor WHERE pends='1'");
+            $members = $connection->query("SELECT d.*, u.name FROM donor d INNER JOIN users u ON d.member_id = u.member_id WHERE d.pends = '1'");
             while($row = $members->fetch_array()) {
           ?>
           <tr>
             <td><?php echo $row['name']; ?></td>
             <td><?php echo $row['gender']; ?></td>
             <td><?php echo $row['phone']; ?></td>
-            <td><?php echo $row['username_fk']; ?></td>
+            <td><?php echo $row['city']; ?></td>
             <td>
               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#adddonor">Donate</button>
             </td>
@@ -66,7 +66,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add <span style="color: blue"> <?php echo $_SESSION['username']; ?></span> Details</h4>
+          <h4 class="modal-title">Add Donor Details</h4>
         </div>
         
         <div class="modal-body">

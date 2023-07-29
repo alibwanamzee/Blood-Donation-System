@@ -130,21 +130,24 @@ DROP TABLE IF EXISTS `donor`;
 
 CREATE TABLE `donor` (
   `donor_id` int(100) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) DEFAULT NULL,
   `gender` varchar(100) DEFAULT NULL,
   `datepicker` varchar(100) DEFAULT NULL,
   `body_weight` varchar(100) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
   `blood_group` varchar(100) DEFAULT NULL,
   `state` varchar(100) DEFAULT NULL,
   `city` varchar(100) DEFAULT NULL,
   `phone` varchar(100) DEFAULT NULL,
-  `username_fk` varchar(100) NOT NULL,
+  `member_id` int(100) NOT NULL,
   `status` int(12) DEFAULT NULL,
   `pends` int(12) DEFAULT 0,
-  PRIMARY KEY (`donor_id`,`username_fk`),
-  KEY `users` (`username_fk`)
+  PRIMARY KEY (`donor_id`),
+  KEY `member_id` (`member_id`),
+  CONSTRAINT `fk_donor_member`
+    FOREIGN KEY (`member_id`)
+    REFERENCES `users` (`member_id`)
+    ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+
 
 /*Table structure for table `email_subs` */
 
@@ -171,8 +174,6 @@ CREATE TABLE `users` (
   `username` varchar(100) NOT NULL,
   `password` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `phone` int(20) DEFAULT NULL,
-  `address` varchar(200) DEFAULT NULL,
   `usertype` varchar(100) DEFAULT NULL,
   `profile` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`member_id`,`username`)
@@ -180,9 +181,9 @@ CREATE TABLE `users` (
 
 /*Data for the table `users` */
 
-INSERT INTO `users` (`member_id`, `name`, `username`, `password`, `email`, `phone`, `address`, `usertype`, `profile`) VALUES 
-(1, 'Admin', 'admin', 'admin', NULL, NULL, NULL, 'admin', 'upload/3_1521639658.jpg'),
-(2, 'Donor', 'donor', 'donor', NULL, NULL, NULL, 'donor', 'upload/vehicle_1521645370.png');
+INSERT INTO `users` (`member_id`, `name`, `username`, `password`, `email`, `usertype`, `profile`) VALUES 
+(1, 'Admin', 'admin', 'admin', 'admin@email.com', 'admin', 'upload/3_1521639658.jpg'),
+(2, 'Donor', 'donor', 'donor', 'donor@email.com', 'donor', 'upload/vehicle_1521645370.png');
 
 /*Table structure for table `state` */
 

@@ -55,8 +55,8 @@
 											<option>Select City</option>
 											<?php 
 											$cities = $connection->query("SELECT * FROM city");
-											while ($cityRow = $cities->fetch_array()) { ?>
-											<option value="<?php echo $cityRow['city_id']; ?>" data-state="<?php echo $cityRow['state_id']; ?>"><?php echo $cityRow['city_name']; ?></option>
+											while ($row = $cities->fetch_array()) { ?>
+											<option value="<?php echo $row['city_name'];?>"><?php echo $row['city_name']; ?></option>
 											<?php } ?>
 										</select>
 									</div>
