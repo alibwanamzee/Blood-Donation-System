@@ -88,7 +88,7 @@
 							<p>
 								<span class="number">
 								<?php
-									$pending_req= $connection->query("SELECT pending_req FROM stats");
+									$pending_req= $connection->query("SELECT pending_req FROM stats WHERE member_id=$_SESSION[id]");
 									$row = $pending_req->fetch_array();
 									echo $row['pending_req'];	
 									
@@ -104,7 +104,7 @@
 							<p>
 								<span class="number">
 								<?php
-									$approved_req= $connection->query("SELECT approved_req FROM stats");
+									$approved_req= $connection->query("SELECT approved_req FROM stats WHERE member_id=$_SESSION[id]");
 									$row = $approved_req->fetch_array();
 									echo $row['approved_req'];	
 									
@@ -120,7 +120,7 @@
 							<p>
 								<span class="number">
 								<?php
-									$visits= $connection->query("SELECT visits FROM stats");
+									$visits= $connection->query("SELECT visits FROM stats WHERE member_id=$_SESSION[id]");
 									$row = $visits->fetch_array();
 									echo $row['visits'];	
 								?>
