@@ -31,6 +31,9 @@
             <th>Name</th>
             <th>Gender</th>
             <th>Phone</th>
+            <th>Blood Group</th>
+            <th>Weight</th>
+            <th>Registration Date</th>
           </tr>
         </thead>
         <tbody>
@@ -42,6 +45,9 @@
             <td><?php echo $row['name']; ?></td>
             <td><?php echo $row['gender']; ?></td>
             <td><?php echo $row['phone']; ?></td>
+            <td><?php echo $row['blood_group']; ?></td>
+            <td><?php echo $row['body_weight']; ?></td>
+            <td><?php echo $row['datepicker']; ?></td>
           </tr>
           <?php
           }
