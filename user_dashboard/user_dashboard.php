@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
 
+
 <div class="main">
 	<!-- MAIN CONTENT -->
 	<div class="main-content">
@@ -28,48 +29,45 @@
 						<div class="modal-body">
 							<form action="add_donor.php" method="post" enctype="multipart/form-data">
 								<div class="form-group">
-									<input type="text" class="form-control" name="name" id="name" placeholder="Enter Full Name" required></input>
-								</div>
-								<div class="form-group">
-									<select class="form-control" name="gender" id="gender">
-										<option value="male">Select Gender</option>
+									<select class="form-control" name="gender" id="gender" required>
+										<option>Select Gender</option>
+										<option value="male">Male</option>
 										<option value="female">Female</option>
-										<option value="other">Male</option>
+										<option value="other">Other</option>
 									</select>
 								</div>
-					<div class="form-group">
+					            <div class="form-group">
 									<input type="text" class="form-control" name="phone" id="phone" placeholder="Enter phone" required></input>
 								</div>
 								<div class="form-group">
-									<input type="email" class="form-control" name="email" id="email" placeholder="Enter email" required></input>
-								</div>
-								<div class="form-group">
-									<select class="form-control" name="state" id="state">
+									<select class="form-control" name="state" id="state" required>
+										<option>Select State</option>
 										<?php 
-										$state = $connection->query("SELECT * FROM state");
-										while($row = $state->fetch_array()){ ?>
-											<option value="<?php echo $row['state_name'];?>"><?php echo $row['state_name'];?></option>
-										<?php }
-										?>
+										$states = $connection->query("SELECT * FROM state");
+										while ($stateRow = $states->fetch_array()) { ?>
+										<option value="<?php echo $stateRow['state_id']; ?>"><?php echo $stateRow['state_name']; ?></option>
+										<?php } ?>
 									</select>
-								</div>
-								<div class="form-group">
-									<select class="form-control" name="city" id="city" required>
-										<?php 
-										$state = $connection->query("SELECT * FROM city");
-										while($row = $state->fetch_array()){ ?>
-											<option value="<?php echo $row['city_name'];?>"><?php echo $row['city_name'];?></option>
-										<?php }
-										?>
-									</select>
-								</div>					
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-							<button type="submit" class="btn btn-primary" name="addmember">Add</button>
+									</div>
 
+									<div class="form-group">
+										<select class="form-control" name="city" id="city" required>
+											<option>Select City</option>
+											<?php 
+											$cities = $connection->query("SELECT * FROM city");
+											while ($cityRow = $cities->fetch_array()) { ?>
+											<option value="<?php echo $cityRow['city_id']; ?>" data-state="<?php echo $cityRow['state_id']; ?>"><?php echo $cityRow['city_name']; ?></option>
+											<?php } ?>
+										</select>
+									</div>
+							
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										<button type="submit" class="btn btn-primary" name="addmember">Add</button>
+
+									</div>
+							</form>
 						</div>
-						</form>
 					</div>
 				</div>
 			</div>
@@ -155,5 +153,3 @@
 <?php
 	include('user_footer.php');
 ?>
-
-
