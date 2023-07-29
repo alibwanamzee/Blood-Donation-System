@@ -31,23 +31,23 @@
             <th>Name</th>
             <th>Gender</th>
             <th>Phone</th>
-            <th>Blood Group</th>
-            <th>Weight</th>
             <th>Registration Date</th>
+            <th>Weight</th>
+            <th>Blood Group</th>
           </tr>
         </thead>
         <tbody>
           <?php
-          $members= $connection->query("SELECT * FROM donor WHERE pends='2'");
+          $members = $connection->query("SELECT d.*, u.name FROM donor d INNER JOIN users u ON d.member_id = u.member_id WHERE d.pends = '2'");
           while($row = $members->fetch_array()) {
           ?>
           <tr>
             <td><?php echo $row['name']; ?></td>
             <td><?php echo $row['gender']; ?></td>
             <td><?php echo $row['phone']; ?></td>
-            <td><?php echo $row['blood_group']; ?></td>
-            <td><?php echo $row['body_weight']; ?></td>
             <td><?php echo $row['datepicker']; ?></td>
+            <td><?php echo $row['body_weight']; ?></td>
+            <td><?php echo $row['blood_group']; ?></td>
           </tr>
           <?php
           }
