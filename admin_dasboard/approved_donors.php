@@ -47,30 +47,9 @@
             <td><?php echo $row['phone']; ?></td>
             <td><?php echo $row['username_fk']; ?></td>
             <td>
-              <button type="button" data-toggle="modal" data-target="#deletdonor<?php echo $row['donor_id']; ?>" class="btn btn-info">Send Alert</button>
               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#adddonor">Donate</button>
             </td>
           </tr>
-          <div class="modal fade" id="deletdonor<?php echo $row['donor_id']?>" role="dialog">
-            <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Approve Donor</h4>
-              </div>
-              <div class="modal-body">
-                <p>Want to Send alert?</p>
-              </div>
-              <form action="approve_donor.php?status_id=<?php echo $row['donor_id']?>" method="post">
-        
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-success">Send Alert</button>
-              </div>
-              </form>
-            </div>
-          </div>
-        </div>
           <?php
           }
           ?>
@@ -90,6 +69,7 @@
           <h4 class="modal-title">Add Donor Details</h4>
         </div>
         <div class="modal-body">
+        <!-- approve_donor.php?status_id=(<?php echo $row['donor_id']?>) -->
         <form action="add_donor.php" method="post" enctype="multipart/form-data">
           <div class="form-group">
             <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name"></input>
@@ -176,23 +156,11 @@
 ?>
 
 <script>
-    function sendEmail() {
-      // Fetch the email address from the server
-      fetchEmail().then(email => {
-        Email.send({
-          SecureToken: "your_secure_token",
-          To: email,
-          From: "sender@example.com",
-          Subject: "CONFIRM EMAIL LOGIN",
-          Body: "You have been accepted in blood donation"
-        }).then(
-          message => alert("Email sent successfully")
-        );
-      });
-    }
+  $(function() {
+    $("#datepicker").datepicker();
+  });
 
-    function fetchEmail() {
-      return fetch("get_email.php")
-        .then(response => response.text());
-    }
-  </script>
+  $(document).ready(function() {
+    $('#donors').DataTable();
+  });
+</script>
