@@ -6,19 +6,21 @@ $datepicker = $_POST['datepicker'];
 $weight = $_POST['weight'];
 $blood = $_POST['blood'];
 
-$donor_id = 22; 
+$members = $connection->query("SELECT d.*, u.name FROM donor d INNER JOIN users u ON d.member_id = u.member_id WHERE d.pends = '1'");
+while ($row = $members->fetch_array()) {
+  $donor_id = $row['donor_id'];
 
-$stmt = $connection->prepare("UPDATE donor SET pends = 2, datepicker = ?, body_weight = ?, blood_group = ? WHERE donor_id = ?");
+  $stmt = $connection->prepare("UPDATE donor SET pends = 2, datepicker = ?, body_weight = ?, blood_group = ? WHERE donor_id = ?");
+  $stmt->bind_param("sssi", $datepicker, $weight, $blood, $donor_id);
 
-$stmt->bind_param("sssi", $datepicker, $weight, $blood, $donor_id);
+  if ($stmt->execute()) {
+  } else {
+    header('location: approved_donors.php?error=Update_Failed');
+    exit;
+  }
 
-
-if ($stmt->execute()) {
-  header('location:approved_donors.php');
-} else {
-
-  header('location:approved_donors.php');
+  $stmt->close();
 }
 
-$stmt->close();
+header('location: approved_donors.php');
 ?>
