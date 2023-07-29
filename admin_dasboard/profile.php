@@ -1,5 +1,5 @@
 <?php
-	include('connection.php');
+	include('../connection.php');
 	session_start();
 
 	if(!isset($_SESSION['username']) AND $_SESSION['member_id'] == ''){
