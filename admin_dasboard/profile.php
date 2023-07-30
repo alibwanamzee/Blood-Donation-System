@@ -34,21 +34,34 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 90vh;
         }
-        .profile-left {
+        .profile-left
+         {
             max-width: 500px;
             background-color: #fff;
             padding: 20px;
             border-radius: 5px;
-            height: 60vh;
+            height: 70vh;
+        }
+        .profile-header {
+            height: 40%;
         }
         .heading {
             text-align: center;
         }
-        .table{
-            display: flex;
-            flex-direction:column ;
+        h4,P{
+            
+            text-align: center;
+            padding: 0.8rem;
+            font-weight: bolder;
+            font-size: larger;
+        }
+        .profile-main img {
+            width: 150px; /* Set your desired width */
+            height: 150px; /* Set your desired height */
+            border-radius: 50%;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -65,59 +78,33 @@
     <div class="profile-left">
         <div class="profile-header">
             <div class="profile-main">
-                <img src="../assets/img/user-medium.png" class="img-circle" alt="Avatar">
+                <img src="../assets/img/user-medium.png" class="img-circle" alt="DP" >
                 <h3 class="name"></h3>
-                <span class="online-status status-available">Available</span>
+                <span class="online-status status-available" style="color:greenyellow">Profile Photo</span>
             </div>
             
         </div>
         <div class="profile-detail">
             <div class="profile-info">
                 <h3 class="heading">My Profile</h3>
-                <table class="table table-borderless" id="donors">
-                    <tbody>
-                        <tr>
-                            <th>Name</th>
-                        <?php
-                        $singleRow = $connection->query("SELECT * FROM users LIMIT 1");
-                        if ($row = $singleRow->fetch_array()) {
-                            ?>
-                            <td><?php echo $row['username']; ?></td>
-                        </tr>
-                        <tr>
-                            <th>Email</th>
-                            <?php
-                                if(!$row['email'] === NULL){
-                                   ?><td><?php echo $row['email'];}else{echo 'No email';} ?></td>
-                        </tr>
-    
-                        <tr>
-                            <th>Password</th>
-                            <td><?php echo $row['password']; ?></td>
-                        </tr>
-                    </tr>
+                <h4>Name: </h4>
+                <span>
                     <?php
-                        } else {
-                            // No row found, handle accordingly
-                            ?>
-                            <tr>
-                                <td colspan="5">No data found</td>
-                            </tr>
-                            <?php
-                        }
+                    $singleRow = $connection->query("SELECT * FROM users LIMIT 1");
+                    if ($row = $singleRow->fetch_array()) {
                         ?>
-                    </tbody>
-                </table>
+                        <p><?php echo $row['username']; ?></p>
+                    <?php  }  ?>
+                </span>
             </div>
             <div class="text-center">
                 <a href="./admin_dashboard.php" class="btn btn-success">Home</a>
             </div>
         </div>
     </div>
+
     <footer>
-        <div class="container-fluid">
-            <p class="text-center">&copy; 2023. All Rights Reserved.</p>
-        </div>
+        <p style="text-align: center;">&copy; 2023. All Rights Reserved.</p>
     </footer>
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
