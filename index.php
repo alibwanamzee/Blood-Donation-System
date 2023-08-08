@@ -3,7 +3,7 @@
 ?>
 <!doctype html>
 <html lang="en" class="fullscreen-bg">
-//test
+
 <head>
 	<title>Please Login Here</title>
 	<meta charset="utf-8">
