@@ -17,40 +17,6 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `Blood_donation_database` /*!40100 DEFA
 
 USE `Blood_donation_database`;
 
-/*Table structure for table `blood_contact` */
-
-DROP TABLE IF EXISTS `blood_contact`;
-
-CREATE TABLE `blood_contact` (
-  `blood_contact_id` int(100) NOT NULL AUTO_INCREMENT,
-  `contact_fk` int(100) DEFAULT NULL,
-  `blood_fk` int(100) DEFAULT NULL,
-  PRIMARY KEY (`blood_contact_id`),
-  KEY `contact_fk` (`contact_fk`),
-  KEY `blood_fk` (`blood_fk`),
-  CONSTRAINT `blood_contact_ibfk_1` FOREIGN KEY (`contact_fk`) REFERENCES `contact` (`contact_id`) ON UPDATE CASCADE,
-  CONSTRAINT `blood_contact_ibfk_2` FOREIGN KEY (`blood_fk`) REFERENCES `blood_group` (`blood_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `blood_contact` */
-
-/*Table structure for table `blood_donor_group` */
-
-DROP TABLE IF EXISTS `blood_donor_group`;
-
-CREATE TABLE `blood_donor_group` (
-  `blood_donor_group_id` int(100) NOT NULL AUTO_INCREMENT,
-  `donor_fk` int(100) DEFAULT NULL,
-  `blood_fk` int(100) DEFAULT NULL,
-  PRIMARY KEY (`blood_donor_group_id`),
-  KEY `donor_fk` (`donor_fk`),
-  KEY `blood_fk` (`blood_fk`),
-  CONSTRAINT `blood_donor_group_ibfk_1` FOREIGN KEY (`donor_fk`) REFERENCES `donor` (`donor_id`) ON UPDATE CASCADE,
-  CONSTRAINT `blood_donor_group_ibfk_2` FOREIGN KEY (`blood_fk`) REFERENCES `blood_group` (`blood_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `blood_donor_group` */
-
 /*Table structure for table `blood_group` */
 
 DROP TABLE IF EXISTS `blood_group`;
@@ -66,20 +32,6 @@ CREATE TABLE `blood_group` (
 INSERT INTO `blood_group` (`blood_id`, `blood_group`) VALUES 
 (3, 'sd'),
 (5, 'D#');
-
-/*Table structure for table `blood_request_group` */
-
-DROP TABLE IF EXISTS `blood_request_group`;
-
-CREATE TABLE `blood_request_group` (
-  `blood_request_group_id` int(100) NOT NULL AUTO_INCREMENT,
-  `blood_fk` int(100) DEFAULT NULL,
-  PRIMARY KEY (`blood_request_group_id`),
-  KEY `blood_fk` (`blood_fk`),
-  CONSTRAINT `blood_request_group_ibfk_2` FOREIGN KEY (`blood_fk`) REFERENCES `blood_group` (`blood_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `blood_request_group` */
 
 /*Table structure for table `city` */
 
@@ -105,24 +57,6 @@ INSERT INTO `city` (`city_id`, `city_code`, `city_name`, `description`, `donor_f
 (1, 'Msa', 'Mombasa', 'City', NULL, 1),
 (2, 'Nrb', 'Nairobi', 'City', NULL, 2);
 
-/*Table structure for table `contact` */
-
-DROP TABLE IF EXISTS `contact`;
-
-CREATE TABLE `contact` (
-  `contact_id` int(100) NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `address` varchar(200) DEFAULT NULL,
-  `phone` varchar(100) DEFAULT NULL,
-  `message` varchar(200) DEFAULT NULL,
-  `member_fk` int(100) DEFAULT NULL,
-  PRIMARY KEY (`contact_id`),
-  KEY `member_fk` (`member_fk`),
-  CONSTRAINT `contact_ibfk_1` FOREIGN KEY (`member_fk`) REFERENCES `users` (`member_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `contact` */
 
 /*Table structure for table `donor` */
 
@@ -148,23 +82,6 @@ CREATE TABLE `donor` (
     ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
-
-/*Table structure for table `email_subs` */
-
-DROP TABLE IF EXISTS `email_subs`;
-
-CREATE TABLE `email_subs` (
-  `subscribe_id` int(100) NOT NULL AUTO_INCREMENT,
-  `email` varchar(160) DEFAULT NULL,
-  `member_fk` int(100) DEFAULT NULL,
-  PRIMARY KEY (`subscribe_id`),
-  KEY `member_fk` (`member_fk`),
-  CONSTRAINT `email_subs_ibfk_1` FOREIGN KEY (`member_fk`) REFERENCES `users` (`member_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `email_subs` */
-
-/*Table structure for table `users` */
 
 DROP TABLE IF EXISTS `users`;
 
