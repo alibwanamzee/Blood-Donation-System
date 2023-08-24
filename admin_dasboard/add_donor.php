@@ -14,6 +14,10 @@ while ($row = $members->fetch_array()) {
   $stmt->bind_param("sssi", $datepicker, $weight, $blood, $donor_id);
 
   if ($stmt->execute()) {
+      $member_id = $row['member_id'];
+      $sql = "UPDATE stats SET visits = visits+1 WHERE member_id = $member_id";
+      $connection->query($sql);
+
   } else {
     header('location: approved_donors.php?error=Update_Failed');
     exit;
