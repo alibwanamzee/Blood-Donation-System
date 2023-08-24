@@ -112,7 +112,7 @@
 
         </div>
         <div class="modal-body">
-          <a href="../profile.php" class="btn btn-primary">View Profile</a>
+          <a href="./profile.php" class="btn btn-primary">View Profile</a>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
