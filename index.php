@@ -38,7 +38,7 @@
 
 						<div class="content">
 							<div class="header">
-								<div class="logo text-center"><img src="assets/img/logo-dark.png" alt="Klorofil Logo"></div>
+								<div class="logo text-center"><img src="assets/img/logo-dark.png" alt="logo"></div>
 								<p class="lead">Login to your account</p>
 							</div>
 							
