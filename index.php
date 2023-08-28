@@ -19,8 +19,8 @@
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/drop.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/drop.png">
 </head>
 
 <body>
@@ -38,7 +38,11 @@
 
 						<div class="content">
 							<div class="header">
-								<div class="logo text-center"><img src="assets/img/logo-dark.png" alt="Klorofil Logo"></div>
+							<div class="logo text-center">
+								<img height="45px" src="assets/img/drop.png" alt="logo" style="vertical-align: middle;">
+								<h2 style="display: inline-block; vertical-align: middle; margin: 0;">Damu</h2>
+							</div>
+
 								<p class="lead">Login to your account</p>
 							</div>
 							
