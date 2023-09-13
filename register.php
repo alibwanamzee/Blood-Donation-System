@@ -30,7 +30,10 @@
 					<div class="left">
 						<div class="content">
 							<div class="header">
-								<div class="logo text-center"><img src="assets/img/logo-dark.png" alt="Klorofil Logo"></div>
+							<div class="logo text-center">
+								<img height="45px" src="assets/img/drop.png" alt="logo" style="vertical-align: middle;">
+								<h2 style="display: inline-block; vertical-align: middle; margin: 0;">Damu</h2>
+							</div>
 								<p class="lead">Login to your account</p>
 							</div>
 							<form class="form-auth-small" action="member_register.php" method="post">
