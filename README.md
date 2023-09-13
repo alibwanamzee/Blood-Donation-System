@@ -1,4 +1,5 @@
 # Blood-Donation-System
+The Blood Donation System is a web-based application designed to streamline the process of blood donation management. This system is developed to connect blood donors, blood banks, and recipients, making it easier for individuals in need of blood to find donors and for blood banks to maintain an adequate supply of blood.
 
 ### Development Guide
 
